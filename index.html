@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio | Business Analytics, Transformación Digital & Producto</title>
+  <title>Portafolio | Transformación Digital, Producto & Business Analytics</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -38,47 +38,47 @@
     header {
       background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
       color: #ffffff;
-      padding: 4.5rem 1.5rem 4rem;
+      padding: 0 0 4rem 0;
       text-align: center;
+      overflow: hidden;
     }
 
     .container {
       max-width: 1080px;
       margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
-    /* Cinta animada (Marquee) */
-    .ticker-wrap {
-      display: inline-flex;
-      overflow: hidden;
-      max-width: 440px;
+    /* Cinta animada de ancho completo (Full-width Marquee) */
+    .ticker-full-wrap {
       width: 100%;
-      background-color: #ffe4e6;
-      color: var(--accent);
-      border: 1px solid #fda4af;
-      border-radius: 999px;
-      padding: 0.4rem 0;
-      margin-bottom: 1.25rem;
-      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      background-color: rgba(251, 113, 133, 0.15);
+      border-top: 1px solid rgba(253, 164, 175, 0.35);
+      border-bottom: 1px solid rgba(253, 164, 175, 0.35);
+      padding: 0.6rem 0;
+      margin-bottom: 3rem;
+      overflow: hidden;
+      display: flex;
     }
 
     .ticker-track {
       display: flex;
       width: max-content;
-      animation: ticker-scroll 16s linear infinite;
+      animation: ticker-scroll 22s linear infinite;
     }
 
-    .ticker-wrap:hover .ticker-track {
+    .ticker-full-wrap:hover .ticker-track {
       animation-play-state: paused;
     }
 
     .ticker-item {
       white-space: nowrap;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      letter-spacing: 0.03em;
-      padding-right: 1.5rem;
+      letter-spacing: 0.05em;
+      color: #fda4af;
+      padding-right: 2rem;
+      text-transform: uppercase;
     }
 
     @keyframes ticker-scroll {
@@ -364,14 +364,18 @@
 
   <!-- HERO SECTION -->
   <header>
-    <div class="container">
-      <div class="ticker-wrap">
-        <div class="ticker-track">
-          <span class="ticker-item">Business Analytics • Transformación Digital • Producto •</span>
-          <span class="ticker-item">Business Analytics • Transformación Digital • Producto •</span>
-        </div>
+    <!-- Cinta animada de ancho completo arriba -->
+    <div class="ticker-full-wrap">
+      <div class="ticker-track">
+        <span class="ticker-item">Transformación Digital • Producto • Business Analytics •</span>
+        <span class="ticker-item">Transformación Digital • Producto • Business Analytics •</span>
+        <span class="ticker-item">Transformación Digital • Producto • Business Analytics •</span>
+        <span class="ticker-item">Transformación Digital • Producto • Business Analytics •</span>
       </div>
-      <h1>Portafolio de Soluciones Digitales y Analítica</h1>
+    </div>
+
+    <div class="container">
+      <h1>Soluciones Digitales y Analítica</h1>
       <p class="subtitle">
         Especialista en optimización de procesos, inteligencia de negocios e implementación de soluciones digitales orientadas a maximizar la eficiencia operativa y la toma de decisiones basada en datos.
       </p>
@@ -535,7 +539,7 @@
 
   <footer>
     <div class="container">
-      <p>Portafolio Profesional • Business Analytics, Transformación Digital y Producto</p>
+      <p>Portafolio Profesional • Transformación Digital, Producto y Business Analytics</p>
     </div>
   </footer>
 
