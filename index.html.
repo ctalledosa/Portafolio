@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio | Transformación Digital, Business Analytics & Producto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --surface-color: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --accent-hover: #1d4ed8;
+      --success-bg: #ecfdf5;
+      --success-text: #065f46;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    /* Header / Hero Section */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 4.5rem 1.5rem 4rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .badge-role {
+      display: inline-block;
+      background-color: rgba(37, 99, 235, 0.25);
+      color: #93c5fd;
+      border: 1px solid rgba(147, 197, 253, 0.3);
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    header p.subtitle {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      font-weight: 300;
+    }
+
+    .hero-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Main Content & KPI Bar */
+    main {
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: -5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .kpi-card {
+      background-color: var(--surface-color);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .kpi-number {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .kpi-label {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Section Headings */
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    /* Case Study Cards */
+    .cases-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .case-card {
+      background-color: var(--surface-color);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.25s ease;
+    }
+
+    .case-card:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    .case-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .case-category {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    .impact-pill {
+      background-color: var(--success-bg);
+      color: var(--success-text);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+    }
+
+    .case-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .case-summary {
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      font-size: 0.98rem;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-tag {
+      background-color: #f1f5f9;
+      color: #334155;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Expandable Case Details */
+    details {
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+    }
+
+    summary {
+      font-weight: 600;
+      color: var(--accent);
+      cursor: pointer;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "↓";
+      transition: transform 0.2s ease;
+    }
+
+    details[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    .case-details-body {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .detail-block h4 {
+      color: var(--text-primary);
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .detail-block ul {
+      padding-left: 1.25rem;
+    }
+
+    .detail-block li {
+      margin-bottom: 0.35rem;
+    }
+
+    .evidence-link {
+      display: inline-block;
+      margin-top: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .evidence-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      background-color: var(--surface-color);
+    }
+
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.9rem; }
+      .kpi-strip { margin-top: -3rem; }
+      .case-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header>
+    <div class="container">
+      <span class="badge-role">Transformación Digital • Business Analytics • Producto</span>
+      <h1>Portafolio de Soluciones Digitales y Analítica</h1>
+      <p class="subtitle">
+        Especialista en optimización de procesos, inteligencia de negocios e implementación de soluciones digitales orientadas a maximizar la eficiencia operativa y la toma de decisiones basada en datos.
+      </p>
+      <div class="hero-links">
+        <a href="#casos" class="btn btn-primary">Explorar Casos de Estudio</a>
+        <!-- Reemplaza los enlaces con tu LinkedIn y correo reales -->
+        <a href="https://www.linkedin.com/in/libertadtalledo/" target="_blank" class="btn btn-outline">LinkedIn</a>
+        <a href="https://github.com/ctalledosa/Portafolio" target="_blank" class="btn btn-outline">Repositorio GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- BARRA DE IMPACTO / KPIs DESTACADOS -->
+    <section class="kpi-strip">
+      <div class="kpi-card">
+        <span class="kpi-number">-95%</span>
+        <span class="kpi-label">Reducción de tiempo en validación operativa</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-number">25+</span>
+        <span class="kpi-label">Centros operativos integrados en modelos BI</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-number">100%</span>
+        <span class="kpi-label">Automatización en cálculo de pagos variables</span>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE CASOS DE ESTUDIO -->
+    <section id="casos">
+      <div class="section-header">
+        <h2>Casos de Estudio Destacados</h2>
+        <p>Proyectos reales enfocados en resolver fricciones de negocio mediante datos, automatización y diseño de soluciones.</p>
+      </div>
+
+      <div class="cases-grid">
+
+        <!-- CASO 1 -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Automatización & Eficiencia Operativa</span>
+            <span class="impact-pill">⏱️ De 2 horas a 6 minutos (-95% tiempo)</span>
+          </div>
+          <h3>Automatización de Validación de Geolocalización de Visitas en Campo</h3>
+          <p class="case-summary">
+            Optimización del proceso de auditoría de rutas comerciales en el canal moderno, eliminando la validación manual propensa a errores mediante flujos automatizados de comparación espacial.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Automatización / VBA</span>
+            <span class="tech-tag">Geolocalización</span>
+            <span class="tech-tag">Gestión de Procesos</span>
+            <span class="tech-tag">Retail & Canal Moderno</span>
+          </div>
+
+          <details>
+            <summary>Ver detalle del caso de estudio (Problema, Solución e Impacto)</summary>
+            <div class="case-details-body">
+              <div class="detail-block">
+                <h4>1. Problema de Negocio</h4>
+                <p>Los gestores de ventas visitaban regularmente tiendas del canal moderno, requiriendo verificar que cada registro coincidiera con las coordenadas reales del punto de venta. La revisión manual tomaba cerca de 2 horas diarias y presentaba alto riesgo de error humano.</p>
+              </div>
+              <div class="detail-block">
+                <h4>2. Enfoque y Solución Técnica</h4>
+                <ul>
+                  <li><strong>Estandarización de datos:</strong> Creación de llaves únicas combinando identificador de tienda, latitud y longitud registrada.</li>
+                  <li><strong>Motor de comparación automatizada:</strong> Desarrollo de dos macros especializadas que evalúan la parte entera y los primeros 4 decimales de latitud y longitud frente al maestro oficial de tiendas.</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h4>3. Impacto Cuantificable</h4>
+                <p>Reducción del tiempo operativo de <strong>120 minutos a 6 minutos en promedio</strong>, asegurando trazabilidad y precisión en el cumplimiento de rutas comerciales.</p>
+                <a href="https://drive.google.com/file/d/1IrRN5DTtEOmnsuNIqSf6K_c4AsAXhDCV/view?usp=sharing" target="_blank" class="evidence-link">▶ Ver demostración en video del flujo funcionando</a>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- CASO 2 -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Business Intelligence & Toma de Decisiones</span>
+            <span class="impact-pill">📊 Visibilidad ejecutiva multisede</span>
+          </div>
+          <h3>Modelo de Inteligencia de Negocios para Control Presupuestal y Gastos</h3>
+          <p class="case-summary">
+            Consolidación multi-fuente y diseño de reportes ejecutivos interactivos en Power BI para analizar patrones de gasto, detectar desviaciones y optimizar la asignación de recursos en 25 centros operativos.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Power BI</span>
+            <span class="tech-tag">Modelado de Datos</span>
+            <span class="tech-tag">ETL / Limpieza</span>
+            <span class="tech-tag">KPIs Financieros</span>
+          </div>
+
+          <details>
+            <summary>Ver detalle del caso de estudio (Problema, Solución e Impacto)</summary>
+            <div class="case-details-body">
+              <div class="detail-block">
+                <h4>1. Problema de Negocio</h4>
+                <p>Una empresa de bebidas necesitaba visibilidad histórica y actual de sus gastos operativos (3 tipos de servicio distribuidos en 25 centros operativos y 1 planta embotelladora) para identificar oportunidades de ahorro.</p>
+              </div>
+              <div class="detail-block">
+                <h4>2. Enfoque y Solución Técnica</h4>
+                <ul>
+                  <li><strong>Preparación y Prototipado (Discovery):</strong> Consolidación y limpieza de registros de facturación y diseño de un prototipo inicial para validar los KPIs críticos junto a los usuarios de negocio.</li>
+                  <li><strong>Modelado y Visualización en Power BI:</strong> Construcción de un modelo relacional limpio con tableros dinámicos para monitorear variaciones por sede y tipo de servicio.</li>
+                  <li><strong>Adopción y Despliegue:</strong> Gestión de licenciamiento Pro con TI/Compras e iteración continua basada en feedback de gerentes y administradores.</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h4>3. Impacto Cuantificable</h4>
+                <p>Toma de decisiones ágil respaldada por datos confiables, permitiendo detectar anomalías de gasto y priorizar iniciativas de ahorro por centro operativo.</p>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- CASO 3 -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Analítica de Negocio & Compensaciones</span>
+            <span class="impact-pill">⚙️ Cero errores de cálculo</span>
+          </div>
+          <h3>Sistema Automatizado de Cálculo de Compensación Variable</h3>
+          <p class="case-summary">
+            Rediseño y automatización del modelo de cálculo de incentivos comerciales del canal moderno, integrando métricas de desempeño individual y cumplimiento global por tienda.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Business Analytics</span>
+            <span class="tech-tag">Modelado de Reglas</span>
+            <span class="tech-tag">Excel Avanzado</span>
+            <span class="tech-tag">Gestión de KPIs</span>
+          </div>
+
+          <details>
+            <summary>Ver detalle del caso de estudio (Problema, Solución e Impacto)</summary>
+            <div class="case-details-body">
+              <div class="detail-block">
+                <h4>1. Problema de Negocio</h4>
+                <p>Ante la actualización de metas comerciales y escalas de incentivos en el canal moderno, la empresa requería un sistema escalable que cruzara el rendimiento individual del colaborador con los resultados de su punto de venta.</p>
+              </div>
+              <div class="detail-block">
+                <h4>2. Enfoque y Solución Técnica</h4>
+                <ul>
+                  <li><strong>Módulo 1 (Desempeño Individual):</strong> Cálculo automatizado de porcentajes de cumplimiento por KPI y cruce dinámico contra escalas salariales.</li>
+                  <li><strong>Módulo 2 (Desempeño por Tienda):</strong> Filtrado de tiendas activas y cálculo consolidado de metas por punto de venta para detectar oportunidades comerciales.</li>
+                  <li><strong>Integración Final:</strong> Matriz unificada que determina el pago variable exacto ponderando ambos niveles.</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h4>3. Impacto Cuantificable</h4>
+                <p>Eliminación total de reprocesos manuales en liquidaciones mensuales y mayor transparencia para alinear los incentivos de la fuerza de ventas con los objetivos del negocio.</p>
+              </div>
+            </div>
+          </details>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Portafolio Profesional • Transformación Digital, Business Analytics y Producto</p>
+    </div>
+  </footer>
+
+</body>
+</html>
