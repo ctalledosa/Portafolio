@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cinthia Libertad Talledo Saavedra | Portafolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-color: #fafaf9;
@@ -75,6 +75,7 @@
       white-space: nowrap;
       font-size: 0.9rem;
       font-weight: 600;
+      font-style: italic;
       letter-spacing: 0.02em;
       color: #fda4af;
       padding-right: 2rem;
@@ -334,16 +335,112 @@
       text-decoration: underline;
     }
 
-    /* Widget flotante de WhatsApp con Pop-up */
+    /* Widget flotante de WhatsApp con Menú Interactivo */
     .whatsapp-widget {
       position: fixed;
       bottom: 25px;
       right: 25px;
       z-index: 1000;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-end;
       gap: 12px;
       font-family: 'Inter', sans-serif;
+    }
+
+    .whatsapp-menu {
+      display: none;
+      flex-direction: column;
+      width: 295px;
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.2), 0 8px 15px -6px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e4e4e7;
+      overflow: hidden;
+      animation: slideUp 0.22s ease-out;
+    }
+
+    .whatsapp-menu.active {
+      display: flex;
+    }
+
+    .wa-menu-header {
+      background: linear-gradient(135deg, #075e54 0%, #128c7e 100%);
+      color: #ffffff;
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .wa-menu-header strong {
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .wa-menu-header span {
+      font-size: 0.78rem;
+      opacity: 0.9;
+    }
+
+    .wa-close-btn {
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 1.25rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.85;
+    }
+
+    .wa-close-btn:hover {
+      opacity: 1;
+    }
+
+    .wa-menu-body {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background-color: #fafaf9;
+    }
+
+    .wa-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background-color: #ffffff;
+      border: 1px solid #e4e4e7;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #18181b;
+      font-size: 0.86rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .wa-option:hover {
+      border-color: #25d366;
+      background-color: #f0fdf4;
+      transform: translateX(-2px);
+    }
+
+    .wa-option-icon {
+      font-size: 1.2rem;
+    }
+
+    .wa-option-text small {
+      display: block;
+      font-weight: 400;
+      font-size: 0.75rem;
+      color: #52525b;
+    }
+
+    .whatsapp-trigger-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .whatsapp-popup {
@@ -351,270 +448,6 @@
       color: #18181b;
       padding: 10px 14px;
       border-radius: 12px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
       font-size: 0.88rem;
-      font-weight: 600;
-      position: relative;
-      animation: pulse-popup 3s infinite ease-in-out;
-      border: 1px solid #e4e4e7;
-    }
-
-    .whatsapp-popup::after {
-      content: '';
-      position: absolute;
-      right: -6px;
-      top: 50%;
-      transform: translateY(-50%);
-      border-width: 6px 0 6px 6px;
-      border-style: solid;
-      border-color: transparent transparent transparent #ffffff;
-      display: block;
-      width: 0;
-    }
-
-    .whatsapp-btn {
-      background-color: #25d366;
-      color: #ffffff;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-      text-decoration: none;
-      transition: transform 0.25s ease, background-color 0.25s ease;
-    }
-
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
-      background-color: #20ba5a;
-    }
-
-    .whatsapp-btn svg {
-      width: 32px;
-      height: 32px;
-      fill: #ffffff;
-    }
-
-    @keyframes pulse-popup {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 1.5rem;
-      border-top: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      background-color: var(--surface-color);
-    }
-
-    @media (max-width: 640px) {
-      header h1 { font-size: 1.9rem; }
-      .kpi-strip { margin-top: -4rem; }
-      .case-card { padding: 1.5rem; }
-      .whatsapp-popup { display: none; } /* Ocultar burbuja de texto en celulares muy pequeños para ganar espacio */
-    }
-  </style>
-</head>
-<body>
-
-  <!-- HERO SECTION -->
-  <header>
-    <!-- Cinta animada con nombre y arbolitos -->
-    <div class="ticker-full-wrap">
-      <div class="ticker-track">
-        <span class="ticker-item">Cinthia Libertad Talledo Saavedra 🎄 Transformación Digital 🎄 Producto 🎄 Business Analytics 🎄</span>
-        <span class="ticker-item">Cinthia Libertad Talledo Saavedra 🎄 Transformación Digital 🎄 Producto 🎄 Business Analytics 🎄</span>
-        <span class="ticker-item">Cinthia Libertad Talledo Saavedra 🎄 Transformación Digital 🎄 Producto 🎄 Business Analytics 🎄</span>
-      </div>
-    </div>
-
-    <div class="container">
-      <h1>Soluciones Digitales y Analítica</h1>
-      <p class="subtitle">
-        Especialista en optimización de procesos, inteligencia de negocios e implementación de soluciones digitales orientadas a maximizar la eficiencia operativa y la toma de decisiones basada en datos.
-      </p>
-      <div class="hero-links">
-        <a href="#casos" class="btn">Explorar Casos de Estudio</a>
-        <a href="https://www.linkedin.com/in/libertadtalledo/" target="_blank" class="btn">LinkedIn</a>
-        <a href="https://github.com/ctalledosa/Portafolio" target="_blank" class="btn">Repositorio GitHub</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- BARRA DE IMPACTO / KPIs DESTACADOS -->
-    <section class="kpi-strip">
-      <div class="kpi-card">
-        <span class="kpi-number">-95%</span>
-        <span class="kpi-label">Reducción de tiempo en validación operativa</span>
-      </div>
-      <div class="kpi-card">
-        <span class="kpi-number">25+</span>
-        <span class="kpi-label">Centros operativos integrados en modelos BI</span>
-      </div>
-      <div class="kpi-card">
-        <span class="kpi-number">100%</span>
-        <span class="kpi-label">Automatización en cálculo de pagos variables</span>
-      </div>
-    </section>
-
-    <!-- SECCIÓN DE CASOS DE ESTUDIO -->
-    <section id="casos">
-      <div class="section-header">
-        <h2>Casos de Estudio Destacados</h2>
-        <p>Proyectos reales enfocados en resolver fricciones de negocio mediante datos, automatización y diseño de soluciones.</p>
-      </div>
-
-      <div class="cases-grid">
-
-        <!-- CASO 1 -->
-        <article class="case-card">
-          <div class="case-top">
-            <span class="case-category">Automatización & Eficiencia Operativa</span>
-            <span class="impact-pill">⏱️ De 2 horas a 6 minutos (-95% tiempo)</span>
-          </div>
-          <h3>Automatización de Validación de Geolocalización de Visitas en Campo</h3>
-          <p class="case-summary">
-            Optimización del proceso de auditoría de rutas comerciales en el canal moderno, eliminando la validación manual propensa a errores mediante flujos automatizados de comparación espacial.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-tag">Automatización / VBA</span>
-            <span class="tech-tag">Geolocalización</span>
-            <span class="tech-tag">Gestión de Procesos</span>
-            <span class="tech-tag">Retail & Canal Moderno</span>
-          </div>
-
-          <details>
-            <summary>Ver detalle del caso de estudio (Problema, Solución e Impacto)</summary>
-            <div class="case-details-body">
-              <div class="detail-block">
-                <h4>1. Problema de Negocio</h4>
-                <p>Los gestores de ventas visitaban regularmente tiendas del canal moderno, requiriendo verificar que cada registro coincidiera con las coordenadas reales del punto de venta. La revisión manual tomaba cerca de 2 horas diarias y presentaba alto riesgo de error humano.</p>
-              </div>
-              <div class="detail-block">
-                <h4>2. Enfoque y Solución Técnica</h4>
-                <ul>
-                  <li><strong>Estandarización de datos:</strong> Creación de llaves únicas combinando identificador de tienda, latitud y longitud registrada.</li>
-                  <li><strong>Motor de comparación automatizada:</strong> Desarrollo de dos macros especializadas que evalúan la parte entera y los primeros 4 decimales de latitud y longitud frente al maestro oficial de tiendas.</li>
-                </ul>
-              </div>
-              <div class="detail-block">
-                <h4>3. Impacto Cuantificable</h4>
-                <p>Reducción del tiempo operativo de <strong>120 minutos a 6 minutos en promedio</strong>, asegurando trazabilidad y precisión en el cumplimiento de rutas comerciales.</p>
-                <a href="https://drive.google.com/file/d/1IrRN5DTtEOmnsuNIqSf6K_c4AsAXhDCV/view?usp=sharing" target="_blank" class="evidence-link">▶ Ver demostración en video del flujo funcionando</a>
-              </div>
-            </div>
-          </details>
-        </article>
-
-        <!-- CASO 2 -->
-        <article class="case-card">
-          <div class="case-top">
-            <span class="case-category">Business Intelligence & Toma de Decisiones</span>
-            <span class="impact-pill">📊 Visibilidad ejecutiva multisede</span>
-          </div>
-          <h3>Modelo de Inteligencia de Negocios para Control Presupuestal y Gastos</h3>
-          <p class="case-summary">
-            Consolidación multi-fuente y diseño de reportes ejecutivos interactivos en Power BI para analizar patrones de gasto, detectar desviaciones y optimizar la asignación de recursos en 25 centros operativos.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-tag">Power BI</span>
-            <span class="tech-tag">Modelado de Datos</span>
-            <span class="tech-tag">ETL / Limpieza</span>
-            <span class="tech-tag">KPIs Financieros</span>
-          </div>
-
-          <details>
-            <summary>Ver detalle del caso de estudio (Problema, Solución e Impacto)</summary>
-            <div class="case-details-body">
-              <div class="detail-block">
-                <h4>1. Problema de Negocio</h4>
-                <p>Una empresa de bebidas necesitaba visibilidad histórica y actual de sus gastos operativos (3 tipos de servicio distribuidos en 25 centros operativos y 1 planta embotelladora) para identificar oportunidades de ahorro.</p>
-              </div>
-              <div class="detail-block">
-                <h4>2. Enfoque y Solución Técnica</h4>
-                <ul>
-                  <li><strong>Preparación y Prototipado (Discovery):</strong> Consolidación y limpieza de registros de facturación y diseño de un prototipo inicial para validar los KPIs críticos junto a los usuarios de negocio.</li>
-                  <li><strong>Modelado y Visualización en Power BI:</strong> Construcción de un modelo relacional limpio con tableros dinámicos para monitorear variaciones por sede y tipo de servicio.</li>
-                  <li><strong>Adopción y Despliegue:</strong> Gestión de licenciamiento Pro con TI/Compras e iteración continua basada en feedback de gerentes y administradores.</li>
-                </ul>
-              </div>
-              <div class="detail-block">
-                <h4>3. Impacto Cuantificable</h4>
-                <p>Toma de decisiones ágil respaldada por datos confiables, permitiendo detectar anomalías de gasto y priorizar iniciativas de ahorro por centro operativo.</p>
-              </div>
-            </div>
-          </details>
-        </article>
-
-        <!-- CASO 3 -->
-        <article class="case-card">
-          <div class="case-top">
-            <span class="case-category">Analítica de Negocio & Compensaciones</span>
-            <span class="impact-pill">⚙️ Cero errores de cálculo</span>
-          </div>
-          <h3>Sistema Automatizado de Cálculo de Compensación Variable</h3>
-          <p class="case-summary">
-            Rediseño y automatización del modelo de cálculo de incentivos comerciales del canal moderno, integrando métricas de desempeño individual y cumplimiento global por tienda.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-tag">Business Analytics</span>
-            <span class="tech-tag">Modelado de Reglas</span>
-            <span class="tech-tag">Excel Avanzado</span>
-            <span class="tech-tag">Gestión de KPIs</span>
-          </div>
-
-          <details>
-            <summary>Ver detalle del caso de estudio (Problema, Solución e Impacto)</summary>
-            <div class="case-details-body">
-              <div class="detail-block">
-                <h4>1. Problema de Negocio</h4>
-                <p>Ante la actualización de metas comerciales y escalas de incentivos en el canal moderno, la empresa requería un sistema escalable que cruzara el rendimiento individual del colaborador con los resultados de su punto de venta.</p>
-              </div>
-              <div class="detail-block">
-                <h4>2. Enfoque y Solución Técnica</h4>
-                <ul>
-                  <li><strong>Módulo 1 (Desempeño Individual):</strong> Cálculo automatizado de porcentajes de cumplimiento por KPI y cruce dinámico contra escalas salariales.</li>
-                  <li><strong>Módulo 2 (Desempeño por Tienda):</strong> Filtrado de tiendas activas y cálculo consolidado de metas por punto de venta para detectar oportunidades comerciales.</li>
-                  <li><strong>Integración Final:</strong> Matriz unificada que determina el pago variable exacto ponderando ambos niveles.</li>
-                </ul>
-              </div>
-              <div class="detail-block">
-                <h4>3. Impacto Cuantificable</h4>
-                <p>Eliminación total de reprocesos manuales en liquidaciones mensuales y mayor transparencia para alinear los incentivos de la fuerza de ventas con los objetivos del negocio.</p>
-              </div>
-            </div>
-          </details>
-        </article>
-
-      </div>
-    </section>
-  </main>
-
-  <!-- WIDGET FLOTANTE DE WHATSAPP CON POP-UP -->
-  <div class="whatsapp-widget">
-    <div class="whatsapp-popup">¡Hablemos por WhatsApp! 👋</div>
-    <!-- REEMPLAZA 51999999999 con tu número real de celular con código de país (51 para Perú) -->
-    <a href="https://wa.me/51970531660?text=Hola%20Cinthia,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." 
-       target="_blank" 
-       class="whatsapp-btn" 
-       title="Escríbeme por WhatsApp">
-      <svg viewBox="0 0 24 24">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-      </svg>
-    </a>
-  </div>
-
-  <footer>
-    <div class="container">
-      <p>Cinthia Libertad Talledo Saavedra • Portafolio Profesional</p>
-    </div>
-  </footer>
-
-</body>
-</html>
+      font-weight: 6
