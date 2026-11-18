@@ -1,14 +1,13 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio | Transformación Digital, Business Analytics & Producto</title>
+  <title>Portafolio | Business Analytics, Transformación Digital & Producto</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-     
-    --bg-color: #fafaf9;
+      --bg-color: #fafaf9;
       --surface-color: #ffffff;
       --text-primary: #18181b;
       --text-secondary: #52525b;
@@ -48,18 +47,49 @@
       margin: 0 auto;
     }
 
-   .badge-role {
-      display: inline-block;
-      background-color: #ffe4e6;      /* Fondo rosa pálido para que resalte */
-      color: var(--accent);           /* Mismo coral intenso del -95% (#e11d48) */
+    /* Cinta animada (Marquee) */
+    .ticker-wrap {
+      display: inline-flex;
+      overflow: hidden;
+      max-width: 440px;
+      width: 100%;
+      background-color: #ffe4e6;
+      color: var(--accent);
       border: 1px solid #fda4af;
-      padding: 0.35rem 1rem;
       border-radius: 999px;
+      padding: 0.4rem 0;
+      margin-bottom: 1.25rem;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker-scroll 16s linear infinite;
+    }
+
+    .ticker-wrap:hover .ticker-track {
+      animation-play-state: paused;
+    }
+
+    .ticker-item {
+      white-space: nowrap;
       font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.03em;
-      margin-bottom: 1.25rem;
+      padding-right: 1.5rem;
     }
+
+    @keyframes ticker-scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
     header h1 {
       font-size: 2.5rem;
       font-weight: 700;
@@ -335,14 +365,18 @@
   <!-- HERO SECTION -->
   <header>
     <div class="container">
-      <span class="badge-role">Transformación Digital • Business Analytics • Producto</span>
+      <div class="ticker-wrap">
+        <div class="ticker-track">
+          <span class="ticker-item">Business Analytics • Transformación Digital • Producto •</span>
+          <span class="ticker-item">Business Analytics • Transformación Digital • Producto •</span>
+        </div>
+      </div>
       <h1>Portafolio de Soluciones Digitales y Analítica</h1>
       <p class="subtitle">
         Especialista en optimización de procesos, inteligencia de negocios e implementación de soluciones digitales orientadas a maximizar la eficiencia operativa y la toma de decisiones basada en datos.
       </p>
       <div class="hero-links">
         <a href="#casos" class="btn btn-primary">Explorar Casos de Estudio</a>
-        <!-- Reemplaza los enlaces con tu LinkedIn y correo reales -->
         <a href="https://www.linkedin.com/in/libertadtalledo/" target="_blank" class="btn btn-outline">LinkedIn</a>
         <a href="https://github.com/ctalledosa/Portafolio" target="_blank" class="btn btn-outline">Repositorio GitHub</a>
       </div>
@@ -501,10 +535,9 @@
 
   <footer>
     <div class="container">
-      <p>Portafolio Profesional • Transformación Digital, Business Analytics y Producto</p>
+      <p>Portafolio Profesional • Business Analytics, Transformación Digital y Producto</p>
     </div>
   </footer>
 
 </body>
 </html>
-      
