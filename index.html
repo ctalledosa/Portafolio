@@ -27,6 +27,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg-color);
@@ -34,7 +38,7 @@
       line-height: 1.6;
     }
 
-    /* Header / Hero Section - Fondo más oscuro y elegante */
+    /* Header / Hero Section - Fondo oscuro y elegante */
     header {
       background: linear-gradient(135deg, #0f0c1b 0%, #1c0928 100%);
       color: #ffffff;
@@ -240,6 +244,15 @@
       border-radius: 999px;
     }
 
+    .read-time-pill {
+      background-color: #f1f5f9;
+      color: #475569;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+    }
+
     .case-card h3 {
       font-size: 1.35rem;
       font-weight: 700;
@@ -270,7 +283,7 @@
       border: 1px solid #e2e8f0;
     }
 
-    /* Expandable Case Details */
+    /* Expandable Case Details & Articles */
     details {
       border-top: 1px solid var(--border);
       padding-top: 1.25rem;
@@ -300,27 +313,37 @@
       transform: rotate(180deg);
     }
 
-    .case-details-body {
+    .case-details-body, .article-body {
       margin-top: 1.5rem;
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.25rem;
       color: var(--text-secondary);
-      font-size: 0.95rem;
+      font-size: 0.96rem;
+      line-height: 1.7;
     }
 
-    .detail-block h4 {
+    .detail-block h4, .article-body h4 {
       color: var(--text-primary);
-      font-size: 1rem;
-      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+      margin-bottom: 0.45rem;
     }
 
-    .detail-block ul {
+    .detail-block ul, .article-body ul {
       padding-left: 1.25rem;
     }
 
-    .detail-block li {
-      margin-bottom: 0.35rem;
+    .detail-block li, .article-body li {
+      margin-bottom: 0.45rem;
+    }
+
+    .article-highlight {
+      background-color: #fafaf9;
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      color: var(--text-primary);
+      font-weight: 500;
     }
 
     .evidence-link {
@@ -333,6 +356,13 @@
 
     .evidence-link:hover {
       text-decoration: underline;
+    }
+
+    /* Separación sección Artículos */
+    #articulos {
+      margin-top: 4.5rem;
+      padding-top: 3.5rem;
+      border-top: 1px solid var(--border);
     }
 
     /* Widget flotante de WhatsApp con Menú Interactivo */
@@ -542,6 +572,7 @@
       </p>
       <div class="hero-links">
         <a href="#casos" class="btn">Explorar Casos de Estudio</a>
+        <a href="#articulos" class="btn">Artículos</a>
         <a href="https://www.linkedin.com/in/libertadtalledo/" target="_blank" class="btn">LinkedIn</a>
         <a href="https://github.com/ctalledosa/Portafolio" target="_blank" class="btn">Repositorio GitHub</a>
       </div>
@@ -689,6 +720,82 @@
               <div class="detail-block">
                 <h4>3. Impacto Cuantificable</h4>
                 <p>Eliminación total de reprocesos manuales en liquidaciones mensuales y mayor transparencia para alinear los incentivos de la fuerza de ventas con los objetivos del negocio.</p>
+              </div>
+            </div>
+          </details>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE ARTÍCULOS Y PERSPECTIVAS -->
+    <section id="articulos">
+      <div class="section-header">
+        <h2>Artículos y Perspectivas</h2>
+        <p>Reflexiones prácticas sobre estrategia, evolución de productos digitales y toma de decisiones basada en evidencia.</p>
+      </div>
+
+      <div class="cases-grid">
+
+        <!-- ARTÍCULO 1 -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Estrategia & Producto</span>
+            <span class="read-time-pill">📖 Lectura de 3 min</span>
+          </div>
+          <h3>La sinergia entre Transformación Digital, Producto Digital y Business Analytics</h3>
+          <p class="case-summary">
+            Por qué digitalizar procesos no basta si no se construyen productos centrados en el usuario y respaldados por analítica continua que valide el impacto real en el negocio.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Transformación Digital</span>
+            <span class="tech-tag">Producto Digital</span>
+            <span class="tech-tag">Business Analytics</span>
+            <span class="tech-tag">Estrategia de Negocio</span>
+          </div>
+
+          <details>
+            <summary>Leer artículo completo</summary>
+            <div class="article-body">
+              <p>
+                En muchas organizaciones aún se confunde la <strong>Transformación Digital</strong> con la simple adquisición de software o la migración de formularios en papel a pantallas. Sin embargo, la verdadera transformación ocurre cuando se rediseña la forma en que una empresa crea y entrega valor, y es ahí donde tres disciplinas deben operar como un engranaje inseparable.
+              </p>
+
+              <div class="article-highlight">
+                La Transformación Digital define el rumbo estratégico, el Producto Digital materializa la solución en manos del usuario, y Business Analytics actúa como la brújula que valida si estamos generando impacto real.
+              </div>
+
+              <div>
+                <h4>1. Transformación Digital: El propósito y el rediseño operativo</h4>
+                <p>
+                  Es el marco estratégico que cuestiona el <em>statu quo</em> de los procesos tradicionales. Antes de escribir una sola línea de código o diseñar una interfaz, exige entender dónde están los cuellos de botella operativos, qué fricciones enfrenta el cliente o colaborador y cómo simplificar el flujo de trabajo de punta a punta.
+                </p>
+              </div>
+
+              <div>
+                <h4>2. Producto Digital: El vehículo de ejecución centrado en el usuario</h4>
+                <p>
+                  Un producto digital (ya sea una app móvil, un portal de autogestión o un flujo interno automatizado) traduce esa visión estratégica en una experiencia tangible, iterativa y escalable. Gestionar con mentalidad de producto implica priorizar funcionalidades por valor de negocio, lanzar versiones tempranas (MVP) y evolucionar continuamente en lugar de entregar proyectos estáticos.
+                </p>
+              </div>
+
+              <div>
+                <h4>3. Business Analytics: La evidencia que elimina las suposiciones</h4>
+                <p>
+                  Lanzar un producto sin analítica es navegar a ciegas. Business Analytics aporta el rigor cuantitativo en cada etapa del ciclo de vida:
+                </p>
+                <ul>
+                  <li><strong>En el descubrimiento (Discovery):</strong> Dimensiona el problema real y ayuda a priorizar qué iniciativa tendrá mayor retorno.</li>
+                  <li><strong>Durante la adopción:</strong> Mide tasas de uso, puntos de abandono y tiempos de respuesta operativos.</li>
+                  <li><strong>En la optimización continua:</strong> Convierte los datos transaccionales en indicadores accionables (KPIs) para ajustar reglas de negocio, automatizar decisiones y maximizar la rentabilidad.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4>En síntesis</h4>
+                <p>
+                  Cuando estas tres áreas trabajan en silos, surgen productos tecnológicos que nadie adopta o tableros de datos que nadie acciona. Cuando convergen, cada mejora operativa se convierte en una ventaja competitiva medible y sostenible.
+                </p>
               </div>
             </div>
           </details>
