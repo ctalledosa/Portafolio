@@ -7,51 +7,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #f8fafc;
+      --bg-color: #fafaf9;
       --surface-color: #ffffff;
-      --text-primary: #0f172a;
-      --text-secondary: #475569;
-      --accent: #2563eb;
-      --accent-soft: #eff6ff;
-      --accent-hover: #1d4ed8;
+      --text-primary: #18181b;
+      --text-secondary: #52525b;
+      --accent: #db2777;          /* Fucsia/Magenta vibrante estilo app */
+      --accent-soft: #fdf2f8;     /* Fondo suave para etiquetas */
+      --accent-hover: #be185d;
       --success-bg: #ecfdf5;
       --success-text: #065f46;
-      --border: #e2e8f0;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-      --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+      --border: #e4e4e7;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
-
-    /* Header / Hero Section */
+    /* Header / Hero Section tipo Fintech */
     header {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      background: linear-gradient(135deg, #2e1065 0%, #581c87 100%);
       color: #ffffff;
       padding: 4.5rem 1.5rem 4rem;
       text-align: center;
     }
 
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-
     .badge-role {
       display: inline-block;
-      background-color: rgba(37, 99, 235, 0.25);
-      color: #93c5fd;
-      border: 1px solid rgba(147, 197, 253, 0.3);
+      background-color: rgba(244, 114, 182, 0.2);
+      color: #f472b6;
+      border: 1px solid rgba(244, 114, 182, 0.35);
       padding: 0.35rem 1rem;
       border-radius: 999px;
       font-size: 0.85rem;
@@ -59,7 +41,6 @@
       letter-spacing: 0.03em;
       margin-bottom: 1.25rem;
     }
-
     header h1 {
       font-size: 2.5rem;
       font-weight: 700;
