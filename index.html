@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio | Transformación Digital, Producto & Business Analytics</title>
+  <title>Cinthia Libertad Talledo Saavedra | Portafolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -34,11 +34,11 @@
       line-height: 1.6;
     }
 
-    /* Header / Hero Section - Índigo Profundo */
+    /* Header / Hero Section - Índigo Profundo con más espacio para las tarjetas */
     header {
       background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
       color: #ffffff;
-      padding: 0 0 4rem 0;
+      padding: 0 0 7rem 0;
       text-align: center;
       overflow: hidden;
     }
@@ -55,8 +55,8 @@
       background-color: rgba(251, 113, 133, 0.15);
       border-top: 1px solid rgba(253, 164, 175, 0.35);
       border-bottom: 1px solid rgba(253, 164, 175, 0.35);
-      padding: 0.6rem 0;
-      margin-bottom: 3rem;
+      padding: 0.65rem 0;
+      margin-bottom: 3.5rem;
       overflow: hidden;
       display: flex;
     }
@@ -64,7 +64,7 @@
     .ticker-track {
       display: flex;
       width: max-content;
-      animation: ticker-scroll 22s linear infinite;
+      animation: ticker-scroll 28s linear infinite;
     }
 
     .ticker-full-wrap:hover .ticker-track {
@@ -74,11 +74,10 @@
     .ticker-item {
       white-space: nowrap;
       font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
+      font-weight: 600;
+      letter-spacing: 0.02em;
       color: #fda4af;
       padding-right: 2rem;
-      text-transform: uppercase;
     }
 
     @keyframes ticker-scroll {
@@ -99,7 +98,7 @@
 
     header p.subtitle {
       max-width: 720px;
-      margin: 0 auto 2rem;
+      margin: 0 auto 2.5rem;
       font-size: 1.1rem;
       color: #cbd5e1;
       font-weight: 300;
@@ -155,8 +154,10 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.25rem;
-      margin-top: -5rem;
+      margin-top: -6rem; /* Margen negativo controlado para que solape perfectamente con la cabecera */
       margin-bottom: 3.5rem;
+      position: relative;
+      z-index: 10;
     }
 
     .kpi-card {
@@ -355,7 +356,7 @@
 
     @media (max-width: 640px) {
       header h1 { font-size: 1.9rem; }
-      .kpi-strip { margin-top: -3rem; }
+      .kpi-strip { margin-top: -4rem; }
       .case-card { padding: 1.5rem; }
     }
   </style>
@@ -364,18 +365,17 @@
 
   <!-- HERO SECTION -->
   <header>
-    <!-- Cinta animada de ancho completo arriba -->
+    <!-- Cinta animada con nombre y especialidades -->
     <div class="ticker-full-wrap">
       <div class="ticker-track">
-        <span class="ticker-item">Transformación Digital • Producto • Business Analytics •</span>
-        <span class="ticker-item">Transformación Digital • Producto • Business Analytics •</span>
-        <span class="ticker-item">Transformación Digital • Producto • Business Analytics •</span>
-        <span class="ticker-item">Transformación Digital • Producto • Business Analytics •</span>
+        <span class="ticker-item">Cinthia Libertad Talledo Saavedra • Transformación Digital • Producto • Business Analytics •</span>
+        <span class="ticker-item">Cinthia Libertad Talledo Saavedra • Transformación Digital • Producto • Business Analytics •</span>
+        <span class="ticker-item">Cinthia Libertad Talledo Saavedra • Transformación Digital • Producto • Business Analytics •</span>
       </div>
     </div>
 
     <div class="container">
-      <h1>Soluciones Digitales y Analítica</h1>
+      <h1>Portafolio de Soluciones Digitales y Analítica</h1>
       <p class="subtitle">
         Especialista en optimización de procesos, inteligencia de negocios e implementación de soluciones digitales orientadas a maximizar la eficiencia operativa y la toma de decisiones basada en datos.
       </p>
@@ -539,7 +539,7 @@
 
   <footer>
     <div class="container">
-      <p>Portafolio Profesional • Transformación Digital, Producto y Business Analytics</p>
+      <p>Cinthia Libertad Talledo Saavedra • Portafolio Profesional</p>
     </div>
   </footer>
 
