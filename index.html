@@ -283,4 +283,986 @@
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 2rem;
-      box-shadow:
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .case-card:hover,
+    .kpi-card:hover {
+      border-color: #c7d2fe;
+      box-shadow: 0 0 0 3px #c7d2fe, var(--shadow-hover);
+    }
+
+    .case-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .case-category {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #3730a3;
+      background-color: #e0e7ff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    .impact-pill {
+      background-color: var(--success-bg);
+      color: var(--success-text);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+    }
+
+    .read-time-pill {
+      background-color: #f1f5f9;
+      color: #475569;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+    }
+
+    .case-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .case-summary {
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      font-size: 0.98rem;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-tag {
+      background-color: #f1f5f9;
+      color: #334155;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+    }
+
+    details {
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+    }
+
+    summary {
+      font-weight: 600;
+      color: #3730a3;
+      cursor: pointer;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "↓";
+      transition: transform 0.2s ease;
+    }
+
+    details[open] summary::after { transform: rotate(180deg); }
+
+    .case-details-body, .article-body {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      color: var(--text-secondary);
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .detail-block h4, .article-body h4 {
+      color: var(--text-primary);
+      font-size: 1.05rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .detail-block ul, .article-body ul { padding-left: 1.25rem; }
+
+    .detail-block li, .article-body li { margin-bottom: 0.45rem; }
+
+    .article-highlight {
+      background-color: #fafaf9;
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .article-table-wrap { overflow-x: auto; margin: 0.5rem 0; }
+
+    .article-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    .article-table th {
+      background-color: #f8fafc;
+      color: var(--text-primary);
+      font-weight: 700;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .article-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .chart-box {
+      background-color: #fafaf9;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 0.5rem 0;
+    }
+
+    .chart-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .charts-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .evidence-link {
+      display: inline-block;
+      margin-top: 0.75rem;
+      color: #3730a3;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .evidence-link:hover { text-decoration: underline; }
+
+    #articulos {
+      margin-top: 4.5rem;
+      padding-top: 3.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Widget flotante de WhatsApp */
+    .whatsapp-widget {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .whatsapp-menu {
+      display: none;
+      flex-direction: column;
+      width: 295px;
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.2), 0 8px 15px -6px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e4e4e7;
+      overflow: hidden;
+      animation: slideUp 0.22s ease-out;
+    }
+
+    .whatsapp-menu.active { display: flex; }
+
+    .wa-menu-header {
+      background: linear-gradient(135deg, #075e54 0%, #128c7e 100%);
+      color: #ffffff;
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .wa-menu-header strong { display: block; font-size: 0.95rem; }
+    .wa-menu-header span { font-size: 0.78rem; opacity: 0.9; }
+
+    .wa-close-btn {
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 1.25rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.85;
+    }
+
+    .wa-close-btn:hover { opacity: 1; }
+
+    .wa-menu-body {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background-color: #fafaf9;
+    }
+
+    .wa-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background-color: #ffffff;
+      border: 1px solid #e4e4e7;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #18181b;
+      font-size: 0.86rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .wa-option:hover {
+      border-color: #25d366;
+      background-color: #f0fdf4;
+      transform: translateX(-2px);
+    }
+
+    .wa-option-icon { font-size: 1.2rem; }
+
+    .wa-option-text small {
+      display: block;
+      font-weight: 400;
+      font-size: 0.75rem;
+      color: #52525b;
+    }
+
+    .whatsapp-trigger-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .whatsapp-popup {
+      background-color: #ffffff;
+      color: #18181b;
+      padding: 10px 14px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+      font-size: 0.88rem;
+      font-weight: 600;
+      position: relative;
+      animation: pulse-popup 3s infinite ease-in-out;
+      border: 1px solid #e4e4e7;
+      cursor: pointer;
+    }
+
+    .whatsapp-popup::after {
+      content: '';
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-width: 6px 0 6px 6px;
+      border-style: solid;
+      border-color: transparent transparent transparent #ffffff;
+    }
+
+    .whatsapp-btn {
+      background-color: #25d366;
+      color: #ffffff;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.08);
+      background-color: #20ba5a;
+    }
+
+    .whatsapp-btn svg { width: 30px; height: 30px; fill: #ffffff; }
+
+    @keyframes pulse-popup {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      background-color: var(--surface-color);
+    }
+
+    @media (max-width: 640px) {
+      .kpi-strip { margin-top: -4rem; }
+      .case-card { padding: 1.5rem; }
+      .whatsapp-popup { display: none; }
+    }
+
+    /* ===== MODO OSCURO (las tarjetas conservan su fondo blanco) ===== */
+    body { transition: background-color 0.25s ease, color 0.25s ease; }
+
+    [data-theme="dark"] { color-scheme: dark; }
+    [data-theme="dark"] body { background-color: #120f1c; }
+
+    [data-theme="dark"] .section-header h2 { color: #f4f4f5; }
+    [data-theme="dark"] .section-header p { color: #b4b4bd; }
+    [data-theme="dark"] #articulos { border-top-color: #2f2a42; }
+
+    [data-theme="dark"] footer {
+      background-color: #1b1727;
+      border-top-color: #2f2a42;
+      color: #b4b4bd;
+    }
+
+    /* Las tarjetas se mantienen claras: se evita que el color-scheme oscuro les afecte */
+    [data-theme="dark"] .case-card,
+    [data-theme="dark"] .kpi-card { color-scheme: light; }
+  </style>
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header>
+    <div class="ticker-full-wrap">
+      <div class="ticker-track">
+        <span class="ticker-item">Transformación Digital • Producto Digital • Business Analytics •</span>
+        <span class="ticker-item">Transformación Digital • Producto Digital • Business Analytics •</span>
+        <span class="ticker-item">Transformación Digital • Producto Digital • Business Analytics •</span>
+        <span class="ticker-item">Transformación Digital • Producto Digital • Business Analytics •</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hero-brand">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo oscuro" title="Cambiar modo claro/oscuro">🌙</button>
+        <div class="hero-id">
+          <span class="hero-name">Cinthia Libertad Talledo Saavedra</span>
+          <img class="avatar" src="data:image/jpeg;base64,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" alt="Foto de Cinthia Libertad Talledo Saavedra"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <span class="avatar-fallback" aria-hidden="true">CT</span>
+        </div>
+        <h1 class="hero-title">Soluciones Digitales y Analítica</h1>
+      </div>
+      <p class="subtitle">
+        Especialista en optimización de procesos, inteligencia de negocios e implementación de soluciones digitales orientadas a maximizar la eficiencia operativa y la toma de decisiones basada en datos.
+      </p>
+      <div class="hero-links">
+        <a href="#casos" class="btn">Explorar Casos de Estudio</a>
+        <a href="#articulos" class="btn">Artículos</a>
+        <a href="https://www.linkedin.com/in/libertadtalledo/" target="_blank" class="btn">LinkedIn</a>
+        <a href="https://github.com/ctalledosa/Portafolio" target="_blank" class="btn">Repositorio GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="kpi-strip">
+      <div class="kpi-card">
+        <span class="kpi-number">-95%</span>
+        <span class="kpi-label">Reducción de tiempo en validación operativa</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-number">25+</span>
+        <span class="kpi-label">Centros operativos integrados en modelos BI</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-number">100%</span>
+        <span class="kpi-label">Automatización en cálculo de pagos variables</span>
+      </div>
+    </section>
+
+    <section id="casos">
+      <div class="section-header">
+        <h2>Casos de Estudio Destacados</h2>
+        <p>Proyectos reales enfocados en resolver fricciones de negocio mediante datos, automatización y diseño de soluciones.</p>
+      </div>
+
+      <div class="cases-grid">
+
+        <!-- CASO 1 -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Automatización & Eficiencia Operativa</span>
+            <span class="impact-pill">De 2 horas a 6 minutos (-95% tiempo)</span>
+          </div>
+          <h3>Automatización de Validación de Geolocalización de Visitas en Campo</h3>
+          <p class="case-summary">
+            Optimización del proceso de auditoría de rutas comerciales en el canal moderno, eliminando la validación manual propensa a errores mediante flujos automatizados de comparación espacial.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Automatización / VBA</span>
+            <span class="tech-tag">Geolocalización</span>
+            <span class="tech-tag">Gestión de Procesos</span>
+            <span class="tech-tag">Retail & Canal Moderno</span>
+          </div>
+
+          <details>
+            <summary>Ver detalle del caso de estudio (Problema, Solución e Impacto)</summary>
+            <div class="case-details-body">
+              <div class="detail-block">
+                <h4>1. Problema de Negocio</h4>
+                <p>Los gestores de ventas visitaban regularmente tiendas del canal moderno, requiriendo verificar que cada registro coincidiera con las coordenadas reales del punto de venta. La revisión manual tomaba cerca de 2 horas diarias y presentaba alto riesgo de error humano.</p>
+              </div>
+              <div class="detail-block">
+                <h4>2. Enfoque y Solución Técnica</h4>
+                <ul>
+                  <li><strong>Estandarización de datos:</strong> Creación de llaves únicas combinando identificador de tienda, latitud y longitud registrada.</li>
+                  <li><strong>Motor de comparación automatizada:</strong> Desarrollo de dos macros especializadas que evalúan la parte entera y los primeros 4 decimales de latitud y longitud frente al maestro oficial de tiendas.</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h4>3. Impacto Cuantificable</h4>
+                <p>Reducción del tiempo operativo de <strong>120 minutos a 6 minutos en promedio</strong>, asegurando trazabilidad y precisión en el cumplimiento de rutas comerciales.</p>
+                <a href="https://drive.google.com/file/d/1IrRN5DTtEOmnsuNIqSf6K_c4AsAXhDCV/view?usp=sharing" target="_blank" class="evidence-link">▶ Ver demostración en video del flujo funcionando</a>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- CASO 2 -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Business Intelligence & Toma de Decisiones</span>
+            <span class="impact-pill">Visibilidad ejecutiva multisede</span>
+          </div>
+          <h3>Modelo de Inteligencia de Negocios para Control Presupuestal y Gastos</h3>
+          <p class="case-summary">
+            Consolidación multi-fuente y diseño de reportes ejecutivos interactivos en Power BI para analizar patrones de gasto, detectar desviaciones y optimizar la asignación de recursos en 25 centros operativos.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Power BI</span>
+            <span class="tech-tag">Modelado de Datos</span>
+            <span class="tech-tag">ETL / Limpieza</span>
+            <span class="tech-tag">KPIs Financieros</span>
+          </div>
+
+          <details>
+            <summary>Ver detalle del caso de estudio (Problema, Solución e Impacto)</summary>
+            <div class="case-details-body">
+              <div class="detail-block">
+                <h4>1. Problema de Negocio</h4>
+                <p>Una empresa de bebidas necesitaba visibilidad histórica y actual de sus gastos operativos (3 tipos de servicio distribuidos en 25 centros operativos y 1 planta embotelladora) para identificar oportunidades de ahorro.</p>
+              </div>
+              <div class="detail-block">
+                <h4>2. Enfoque y Solución Técnica</h4>
+                <ul>
+                  <li><strong>Preparación y Prototipado (Discovery):</strong> Consolidación y limpieza de registros de facturación y diseño de un prototipo inicial para validar los KPIs críticos junto a los usuarios de negocio.</li>
+                  <li><strong>Modelado y Visualización en Power BI:</strong> Construcción de un modelo relacional limpio con tableros dinámicos para monitorear variaciones por sede y tipo de servicio.</li>
+                  <li><strong>Adopción y Despliegue:</strong> Gestión de licenciamiento Pro con TI/Compras e iteración continua basada en feedback de gerentes y administradores.</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h4>3. Impacto Cuantificable</h4>
+                <p>Toma de decisiones ágil respaldada por datos confiables, permitiendo detectar anomalías de gasto y priorizar iniciativas de ahorro por centro operativo.</p>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- CASO 3 -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Analítica de Negocio & Compensaciones</span>
+            <span class="impact-pill">Cero errores de cálculo</span>
+          </div>
+          <h3>Sistema Automatizado de Cálculo de Compensación Variable</h3>
+          <p class="case-summary">
+            Rediseño y automatización del modelo de cálculo de incentivos comerciales del canal moderno, integrando métricas de desempeño individual y cumplimiento global por tienda.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Business Analytics</span>
+            <span class="tech-tag">Modelado de Reglas</span>
+            <span class="tech-tag">Excel Avanzado</span>
+            <span class="tech-tag">Gestión de KPIs</span>
+          </div>
+
+          <details>
+            <summary>Ver detalle del caso de estudio (Problema, Solución e Impacto)</summary>
+            <div class="case-details-body">
+              <div class="detail-block">
+                <h4>1. Problema de Negocio</h4>
+                <p>Ante la actualización de metas comerciales y escalas de incentivos en el canal moderno, la empresa requería un sistema escalable que cruzara el rendimiento individual del colaborador con los resultados de su punto de venta.</p>
+              </div>
+              <div class="detail-block">
+                <h4>2. Enfoque y Solución Técnica</h4>
+                <ul>
+                  <li><strong>Módulo 1 (Desempeño Individual):</strong> Cálculo automatizado de porcentajes de cumplimiento por KPI y cruce dinámico contra escalas salariales.</li>
+                  <li><strong>Módulo 2 (Desempeño por Tienda):</strong> Filtrado de tiendas activas y cálculo consolidado de metas por punto de venta para detectar oportunidades comerciales.</li>
+                  <li><strong>Integración Final:</strong> Matriz unificada que determina el pago variable exacto ponderando ambos niveles.</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h4>3. Impacto Cuantificable</h4>
+                <p>Eliminación total de reprocesos manuales en liquidaciones mensuales y mayor transparencia para alinear los incentivos de la fuerza de ventas con los objetivos del negocio.</p>
+              </div>
+            </div>
+          </details>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="articulos">
+      <div class="section-header">
+        <h2>Artículos y Perspectivas</h2>
+        <p>Reflexiones prácticas sobre estrategia, experimentación de producto, gobierno de métricas y evolución digital.</p>
+      </div>
+
+      <div class="cases-grid">
+
+        <!-- ARTÍCULO 1 -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Estrategia & Producto</span>
+            <span class="read-time-pill">Lectura de 3 min</span>
+          </div>
+          <h3>La sinergia entre Transformación Digital, Producto Digital y Business Analytics</h3>
+          <p class="case-summary">
+            Por qué digitalizar procesos no basta si no se construyen productos centrados en el usuario y respaldados por analítica continua que valide el impacto real en el negocio.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Transformación Digital</span>
+            <span class="tech-tag">Producto Digital</span>
+            <span class="tech-tag">Business Analytics</span>
+            <span class="tech-tag">Estrategia de Negocio</span>
+          </div>
+
+          <details>
+            <summary>Leer artículo completo</summary>
+            <div class="article-body">
+              <p>
+                En muchas organizaciones aún se confunde la <strong>Transformación Digital</strong> con la simple adquisición de software o la migración de formularios en papel a pantallas. Sin embargo, la verdadera transformación ocurre cuando se rediseña la forma en que una empresa crea y entrega valor, y es ahí donde tres disciplinas deben operar como un engranaje inseparable.
+              </p>
+
+              <div class="article-highlight">
+                La Transformación Digital define el rumbo estratégico, el Producto Digital materializa la solución en manos del usuario, y Business Analytics actúa como la brújula que valida si estamos generando impacto real.
+              </div>
+
+              <div>
+                <h4>1. Transformación Digital: El propósito y el rediseño operativo</h4>
+                <p>
+                  Es el marco estratégico que cuestiona el <em>statu quo</em> de los procesos tradicionales. Antes de escribir una sola línea de código o diseñar una interfaz, exige entender dónde están los cuellos de botella operativos, qué fricciones enfrenta el cliente o colaborador y cómo simplificar el flujo de trabajo de punta a punta.
+                </p>
+              </div>
+
+              <div>
+                <h4>2. Producto Digital: El vehículo de ejecución centrado en el usuario</h4>
+                <p>
+                  Un producto digital (ya sea una app móvil, un portal de autogestión o un flujo interno automatizado) traduce esa visión estratégica en una experiencia tangible, iterativa y escalable. Gestionar con mentalidad de producto implica priorizar funcionalidades por valor de negocio, lanzar versiones tempranas (MVP) y evolucionar continuamente en lugar de entregar proyectos estáticos.
+                </p>
+              </div>
+
+              <div>
+                <h4>3. Business Analytics: La evidencia que elimina las suposiciones</h4>
+                <p>
+                  Lanzar un producto sin analítica es navegar a ciegas. Business Analytics aporta el rigor cuantitativo en cada etapa del ciclo de vida:
+                </p>
+                <ul>
+                  <li><strong>En el descubrimiento (Discovery):</strong> Dimensiona el problema real y ayuda a priorizar qué iniciativa tendrá mayor retorno.</li>
+                  <li><strong>Durante la adopción:</strong> Mide tasas de uso, puntos de abandono y tiempos de respuesta operativos.</li>
+                  <li><strong>En la optimización continua:</strong> Convierte los datos transaccionales en indicadores accionables (KPIs) para ajustar reglas de negocio, automatizar decisiones y maximizar la rentabilidad.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- ARTÍCULO 2 -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Producto Digital & Growth</span>
+            <span class="read-time-pill">Incluye gráficos · 4 min</span>
+          </div>
+          <h3>Métricas que importan en Producto Digital: Del embudo de conversión a la retención</h3>
+          <p class="case-summary">
+            Cómo diagnosticar la salud de un canal digital combinando el marco AARRR (Métricas Pirata) con curvas de retención de cohortes para evitar el síndrome de las métricas vanidosas.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Product Management</span>
+            <span class="tech-tag">Funnel AARRR</span>
+            <span class="tech-tag">Retención & Cohortes</span>
+            <span class="tech-tag">Canales Digitales</span>
+          </div>
+
+          <details>
+            <summary>Leer artículo y ver gráficos</summary>
+            <div class="article-body">
+              <p>
+                Uno de los errores más frecuentes al gestionar canales digitales —especialmente en banca, salud o retail— es celebrar el volumen de descargas o visitas sin observar qué ocurre después del primer contacto. Un producto digital saludable se mide por su capacidad de resolver una necesidad recurrente sin fricción.
+              </p>
+
+              <div class="charts-grid-2">
+                <div class="chart-box">
+                  <div class="chart-title">Embudo de Conversión en Canal Digital (Modelo AARRR)</div>
+                  <svg viewBox="0 0 360 220" width="100%" height="auto" aria-label="Gráfico de embudo de conversión digital">
+                    <rect x="20" y="15" width="320" height="30" rx="6" fill="#1e1b4b"/>
+                    <text x="32" y="34" fill="#ffffff" font-size="11" font-weight="600">1. Adquisición (Visitas al canal)</text>
+                    <text x="328" y="34" fill="#c7d2fe" font-size="11" font-weight="700" text-anchor="end">100%</text>
+
+                    <rect x="45" y="55" width="270" height="30" rx="6" fill="#312e81"/>
+                    <text x="57" y="74" fill="#ffffff" font-size="11" font-weight="600">2. Activación (Registro / 1er flujo)</text>
+                    <text x="303" y="74" fill="#c7d2fe" font-size="11" font-weight="700" text-anchor="end">64%</text>
+
+                    <rect x="75" y="95" width="210" height="30" rx="6" fill="#e11d48"/>
+                    <text x="87" y="114" fill="#ffffff" font-size="11" font-weight="600">3. Retención (Uso recurrente 30d)</text>
+                    <text x="273" y="114" fill="#ffffff" font-size="11" font-weight="700" text-anchor="end">41%</text>
+
+                    <rect x="105" y="135" width="150" height="30" rx="6" fill="#4f46e5"/>
+                    <text x="115" y="154" fill="#ffffff" font-size="11" font-weight="600">4. Conversión / Transacción</text>
+                    <text x="245" y="154" fill="#ffffff" font-size="11" font-weight="700" text-anchor="end">28%</text>
+
+                    <rect x="135" y="175" width="90" height="30" rx="6" fill="#a5b4fc"/>
+                    <text x="143" y="194" fill="#18181b" font-size="10.5" font-weight="700">5. NPS / Ref.</text>
+                    <text x="218" y="194" fill="#18181b" font-size="11" font-weight="700" text-anchor="end">15%</text>
+                  </svg>
+                </div>
+
+                <div class="chart-box">
+                  <div class="chart-title">Impacto de Reducción de Fricción en Retención (Semanas)</div>
+                  <svg viewBox="0 0 360 220" width="100%" height="auto" aria-label="Curva de retención de usuarios">
+                    <line x1="40" y1="20" x2="40" y2="175" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <line x1="40" y1="175" x2="340" y2="175" stroke="#cbd5e1" stroke-width="1.5"/>
+
+                    <line x1="40" y1="50" x2="340" y2="50" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+                    <line x1="40" y1="112" x2="340" y2="112" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+
+                    <text x="34" y="25" fill="#64748b" font-size="10" text-anchor="end">100%</text>
+                    <text x="34" y="54" fill="#64748b" font-size="10" text-anchor="end">75%</text>
+                    <text x="34" y="116" fill="#64748b" font-size="10" text-anchor="end">40%</text>
+                    <text x="34" y="175" fill="#64748b" font-size="10" text-anchor="end">0%</text>
+
+                    <text x="45" y="190" fill="#64748b" font-size="10">Sem 1</text>
+                    <text x="115" y="190" fill="#64748b" font-size="10">Sem 2</text>
+                    <text x="185" y="190" fill="#64748b" font-size="10">Sem 4</text>
+                    <text x="255" y="190" fill="#64748b" font-size="10">Sem 8</text>
+                    <text x="315" y="190" fill="#64748b" font-size="10">Sem 12</text>
+
+                    <polyline fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="4,3"
+                      points="45,25 120,105 190,138 260,152 330,158"/>
+
+                    <polyline fill="none" stroke="#e11d48" stroke-width="3"
+                      points="45,25 120,68 190,92 260,104 330,108"/>
+
+                    <circle cx="330" cy="108" r="4" fill="#e11d48"/>
+                    <circle cx="330" cy="158" r="3.5" fill="#94a3b8"/>
+
+                    <rect x="55" y="202" width="12" height="3" fill="#e11d48"/>
+                    <text x="72" y="207" fill="#18181b" font-size="10" font-weight="600">Flujo rediseñado (43% meseta)</text>
+                    <rect x="215" y="202" width="12" height="3" fill="#94a3b8"/>
+                    <text x="232" y="207" fill="#64748b" font-size="10">Flujo inicial (12%)</text>
+                  </svg>
+                </div>
+              </div>
+
+              <div>
+                <h4>Claves para accionar estos indicadores:</h4>
+                <ul>
+                  <li><strong>Identificar el "Aha! Moment":</strong> Detectar qué acción temprana predice que un usuario volverá (por ejemplo, completar su primera consulta autogestionada en menos de 90 segundos).</li>
+                  <li><strong>Aplanar la curva de retención:</strong> Cuando la curva se estabiliza horizontalmente (meseta), significa que el producto alcanzó <em>Product-Market Fit</em> para ese segmento.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- ARTÍCULO 3 -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Experimentación & Analítica</span>
+            <span class="read-time-pill">Lectura de 3 min</span>
+          </div>
+          <h3>A/B Testing en Productos Digitales: Cómo validar hipótesis sin adivinar</h3>
+          <p class="case-summary">
+            Guía práctica para estructurar experimentos controlados, definir tamaños de muestra, evitar el cierre prematuro de pruebas y tomar decisiones basadas en significancia estadística.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">A/B Testing</span>
+            <span class="tech-tag">Experimentación</span>
+            <span class="tech-tag">CRO & UX</span>
+            <span class="tech-tag">Estadística Aplicada</span>
+          </div>
+
+          <details>
+            <summary>Leer artículo completo</summary>
+            <div class="article-body">
+              <p>
+                En el desarrollo de productos digitales, las opiniones internas suelen competir sobre qué diseño, mensaje o flujo funcionará mejor. El <strong>A/B Testing</strong> resuelve este dilema dividiendo el tráfico de usuarios de manera aleatoria entre una versión de control (A) y una variante con un cambio específico (B) para medir cuál genera un mejor resultado.
+              </p>
+
+              <div class="article-highlight">
+                Un buen experimento no empieza cambiando el color de un botón; empieza con una hipótesis clara: "Si simplificamos [X], entonces [métrica Y] aumentará en [Z%] porque reducimos la carga cognitiva del usuario".
+              </div>
+
+              <div>
+                <h4>Las 4 reglas de oro para un A/B Test confiable:</h4>
+                <ul>
+                  <li><strong>Una sola variable crítica por prueba:</strong> Si cambias el título, la ubicación del formulario y el precio al mismo tiempo, no sabrás qué factor impulsó el cambio.</li>
+                  <li><strong>Definir una métrica primaria (OEC) y métricas de resguardo:</strong> Si pruebas un flujo más rápido de aprobación crediticia (métrica primaria: conversión), debes vigilar la tasa de morosidad o fraude (métrica de resguardo) para no ganar volumen sacrificando calidad.</li>
+                  <li><strong>Respetar el tamaño de muestra y el ciclo semanal:</strong> Detener un experimento al segundo día porque la variante B va ganando es uno de los sesgos más comunes (<em>peeking</em>). Siempre se deben cubrir ciclos completos de comportamiento (al menos 1 a 2 semanas) con un nivel de confianza estadística del 95%.</li>
+                  <li><strong>Documentar los aprendizajes fallidos:</strong> Un test donde la variante B no supera al control no es un fracaso; evitó invertir meses de desarrollo en una funcionalidad que no aportaba valor.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- ARTÍCULO 4 -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Gobierno & Estrategia</span>
+            <span class="read-time-pill">Lectura de 4 min</span>
+          </div>
+          <h3>KPIs y OKRs en Transformación Digital: Cómo conectar la estrategia con la operación</h3>
+          <p class="case-summary">
+            Por qué confundir indicadores operativos con objetivos estratégicos frena la agilidad organizacional, y cómo estructurar un tablero balanceado que impulse resultados reales.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">OKRs</span>
+            <span class="tech-tag">KPIs</span>
+            <span class="tech-tag">Transformación Digital</span>
+            <span class="tech-tag">Gestión por Procesos</span>
+          </div>
+
+          <details>
+            <summary>Leer artículo completo</summary>
+            <div class="article-body">
+              <p>
+                Muchas iniciativas de transformación digital pierden impulso porque los equipos miden actividad (<em>"entregamos 15 pantallas nuevas"</em>) en lugar de impacto (<em>"redujimos en 40% las llamadas al call center"</em>). Para evitarlo, es fundamental distinguir entre <strong>OKRs</strong> (el motor de cambio) y <strong>KPIs</strong> (el tablero de salud operativa).
+              </p>
+
+              <div class="article-table-wrap">
+                <table class="article-table">
+                  <thead>
+                    <tr>
+                      <th>Dimensión</th>
+                      <th>OKRs (Objectives & Key Results)</th>
+                      <th>KPIs (Key Performance Indicators)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Propósito principal</strong></td>
+                      <td>Impulsar transformación, innovación y saltos de mejora.</td>
+                      <td>Monitorear la salud y estabilidad del negocio día a día.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Horizonte temporal</strong></td>
+                      <td>Trimestral o semestral (ciclos ágiles de revisión).</td>
+                      <td>Continuo (diario, semanal, mensual).</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Ejemplo en Canal Digital</strong></td>
+                      <td><strong>O:</strong> Convertir la app en el canal preferido de autogestión.<br><strong>KR1:</strong> Elevar la adopción digital del 35% al 60%.<br><strong>KR2:</strong> Reducir el tiempo promedio de trámite de 8 min a 2 min.</td>
+                      <td>Disponibilidad del sistema (Uptime 99.9%), SLA de atención de reclamos, tasa de error en transacciones.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div>
+                <h4>Cómo evitar la trampa de las métricas aisladas:</h4>
+                <p>
+                  Cuando un área de tecnología tiene OKRs desconectados de los KPIs del área operativa o comercial, se generan fricciones. La clave está en definir <strong>métricas compartidas de punta a punta (End-to-End)</strong> donde negocio, procesos y analítica respondan por el mismo resultado final.
+                </p>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- ARTÍCULO 5 -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Omnicanalidad & Eficiencia Operativa</span>
+            <span class="read-time-pill">Lectura de 4 min</span>
+          </div>
+          <h3>Del descubrimiento operativo a la automatización: Construyendo canales digitales sin fricción</h3>
+          <p class="case-summary">
+            Un enfoque integral para evolucionar ecosistemas de atención y venta omnicanal combinando mapeo de procesos (BPMN), gobierno de datos en la nube y automatización inteligente.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Canales Digitales</span>
+            <span class="tech-tag">BPMN & Procesos</span>
+            <span class="tech-tag">BigQuery & BI</span>
+            <span class="tech-tag">Automatización & IA</span>
+          </div>
+
+          <details>
+            <summary>Leer artículo completo</summary>
+            <div class="article-body">
+              <p>
+                Tanto en banca y servicios financieros como en salud y retail moderno, los clientes no distinguen entre canales físicos y digitales: esperan una experiencia continua, rápida y sin reprocesos. Lograr esa fluidez requiere articular tres capacidades operativas desde el rol de Producto y Analítica:
+              </p>
+
+              <div>
+                <h4>1. Arquitectura de Procesos antes de la Automatización (BPMN + Design Thinking)</h4>
+                <p>
+                  Automatizar un proceso roto solo produce errores más rápido. El primer paso siempre es levantar el flujo real (<em>As-Is</em>), identificar cuellos de botella en los puntos de contacto con el cliente y rediseñar el flujo ideal (<em>To-Be</em>) eliminando pasos redundantes y validaciones manuales innecesarias.
+                </p>
+              </div>
+
+              <div>
+                <h4>2. Gobierno de Datos y Analítica Escalable en la Nube</h4>
+                <p>
+                  Para que los equipos comerciales y de producto tomen decisiones oportunas, la información dispersa en múltiples sistemas debe integrarse en modelos de datos limpios y confiables (como arquitecturas sobre BigQuery/GCP conectadas a Power BI o Looker). Esto permite pasar de reportes manuales tardíos a tableros automatizados de seguimiento de SLAs, embudos de adquisición y capacidad operativa.
+                </p>
+              </div>
+
+              <div>
+                <h4>3. Automatización de Flujos y Agentes de IA Generativa</h4>
+                <p>
+                  La combinación de flujos automatizados (low-code/no-code) para la gestión operativa interna y agentes conversacionales impulsados por IA generativa para resolver consultas frecuentes libera horas valiosas de los equipos operativos, reduciendo tiempos de espera y elevando el cumplimiento de acuerdos de nivel de servicio (SLA) por encima del 95%.
+                </p>
+              </div>
+
+              <div class="article-highlight">
+                El rol moderno de Analista de Producto Digital y Procesos actúa como el puente bilingüe entre la estrategia del negocio y la ejecución técnica, asegurando que cada solución sea viable, medible y centrada en las personas.
+              </div>
+            </div>
+          </details>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- WIDGET INTERACTIVO DE WHATSAPP -->
+  <div class="whatsapp-widget">
+    <div class="whatsapp-menu" id="waMenu">
+      <div class="wa-menu-header">
+        <div>
+          <strong>Cinthia Talledo</strong>
+          <span>¿Para qué área es la vacante?</span>
+        </div>
+        <button class="wa-close-btn" onclick="toggleWaMenu()" aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="wa-menu-body">
+        <a href="https://wa.me/51970531660?text=Hola%20Cinthia,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo%20sobre%20una%20vacante%20en%20Transformaci%C3%B3n%20Digital." 
+           target="_blank" class="wa-option">
+          <span class="wa-option-icon">🔄</span>
+          <div class="wa-option-text">
+            Transformación Digital
+            <small>Procesos, omnicanalidad y mejora continua</small>
+          </div>
+        </a>
+
+        <a href="https://wa.me/51970531660?text=Hola%20Cinthia,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo%20sobre%20una%20vacante%20en%20Producto%20Digital." 
+           target="_blank" class="wa-option">
+          <span class="wa-option-icon">🚀</span>
+          <div class="wa-option-text">
+            Producto Digital
+            <small>Canales digitales, discovery y gestión de producto</small>
+          </div>
+        </a>
+
+        <a href="https://wa.me/51970531660?text=Hola%20Cinthia,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo%20sobre%20una%20vacante%20en%20Business%20Analytics." 
+           target="_blank" class="wa-option">
+          <span class="wa-option-icon">📊</span>
+          <div class="wa-option-text">
+            Business Analytics
+            <small>Análisis de datos, KPIs y decisiones basadas en evidencia</small>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="whatsapp-trigger-row">
+      <div class="whatsapp-popup" id="waPopup" onclick="toggleWaMenu()">¿Hablamos por WhatsApp? 👋</div>
+      <button class="whatsapp-btn" onclick="toggleWaMenu()" aria-label="Abrir opciones de WhatsApp">
+        <svg viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('themeToggle');
+
+      function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+        btn.setAttribute('aria-label', theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+      }
+
+      applyTheme(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+
+      btn.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+    })();
+
+    function toggleWaMenu() {
+      const menu = document.getElementById('waMenu');
+      const popup = document.getElementById('waPopup');
+      menu.classList.toggle('active');
+      popup.style.display = menu.classList.contains('active') ? 'none' : 'block';
+    }
+  </script>
+
+  <footer>
+    <div class="container">
+      <p>Cinthia Libertad Talledo Saavedra • Portafolio Profesional</p>
+    </div>
+  </footer>
+
+</body>
+</html>
