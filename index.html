@@ -39,12 +39,12 @@
       margin-bottom: 1.75rem;
     }
 
-        .hero-name {
+    .hero-name {
       display: block;
       font-size: 0.95rem;
       font-weight: 600;
       letter-spacing: 0.02em;
-      color: #c7d2fe;
+      color: #d896e8;
       text-align: left;
     }
 
@@ -55,7 +55,6 @@
       justify-content: flex-start;
       gap: 0.85rem;
       margin-bottom: 0.75rem;
-      padding-right: 54px;
     }
 
     .avatar,
@@ -63,7 +62,7 @@
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      border: 3px solid #c7d2fe;
+      border: 3px solid #d896e8;
       flex-shrink: 0;
     }
 
@@ -78,7 +77,7 @@
       align-items: center;
       justify-content: center;
       background-color: #312e81;
-      color: #c7d2fe;
+      color: #d896e8;
       font-weight: 700;
       font-size: 1.5rem;
     }
@@ -256,10 +255,16 @@
       transition: box-shadow 0.25s ease, border-color 0.25s ease;
     }
 
-    .case-card:hover,
+    /* Las tarjetas de KPIs conservan el lavanda (#c7d2fe) */
     .kpi-card:hover {
       border-color: #c7d2fe;
       box-shadow: 0 0 0 3px #c7d2fe, var(--shadow-hover);
+    }
+
+    /* Las tarjetas de casos y artículos usan #d896e8 */
+    .case-card:hover {
+      border-color: #d896e8;
+      box-shadow: 0 0 0 3px #d896e8, var(--shadow-hover);
     }
 
     .case-top {
@@ -613,7 +618,6 @@
       .case-card { padding: 1.5rem; }
       .whatsapp-popup { display: none; }
     }
-
   </style>
 </head>
 <body>
@@ -893,11 +897,11 @@
                   <svg viewBox="0 0 360 220" width="100%" height="auto" aria-label="Gráfico de embudo de conversión digital">
                     <rect x="20" y="15" width="320" height="30" rx="6" fill="#1e1b4b"/>
                     <text x="32" y="34" fill="#ffffff" font-size="11" font-weight="600">1. Adquisición (Visitas al canal)</text>
-                    <text x="328" y="34" fill="#c7d2fe" font-size="11" font-weight="700" text-anchor="end">100%</text>
+                    <text x="328" y="34" fill="#d896e8" font-size="11" font-weight="700" text-anchor="end">100%</text>
 
                     <rect x="45" y="55" width="270" height="30" rx="6" fill="#312e81"/>
                     <text x="57" y="74" fill="#ffffff" font-size="11" font-weight="600">2. Activación (Registro / 1er flujo)</text>
-                    <text x="303" y="74" fill="#c7d2fe" font-size="11" font-weight="700" text-anchor="end">64%</text>
+                    <text x="303" y="74" fill="#d896e8" font-size="11" font-weight="700" text-anchor="end">64%</text>
 
                     <rect x="75" y="95" width="210" height="30" rx="6" fill="#e11d48"/>
                     <text x="87" y="114" fill="#ffffff" font-size="11" font-weight="600">3. Retención (Uso recurrente 30d)</text>
@@ -1172,7 +1176,6 @@
   </div>
 
   <script>
-  
     function toggleWaMenu() {
       const menu = document.getElementById('waMenu');
       const popup = document.getElementById('waPopup');
@@ -1189,5 +1192,4 @@
 
 </body>
 </html>
-
 
