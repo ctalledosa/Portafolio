@@ -52,7 +52,29 @@
       margin: 0 auto;
       padding: 0 1.5rem;
     }
+/* Marca personal arriba a la izquierda (estilo logo con ™) */
+.brand-bar {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+}
 
+.brand {
+  display: inline-flex;
+  align-items: flex-start;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(1rem, 2.6vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.brand sup {
+  font-size: 0.45em;
+  font-weight: 500;
+  line-height: 1;
+  margin-left: 2px;
+  margin-top: 0.15em;
+}
     /* Cinta animada de ancho completo (Full-width Marquee) */
     .ticker-full-wrap {
       width: 100%;
@@ -616,7 +638,13 @@
 <body>
 
   <!-- HERO SECTION -->
-  <header>
+    <header>
+  <div class="brand-bar">
+    <a href="#" class="brand">Cinthia Libertad Talledo Saavedra<sup>™</sup></a>
+  </div>
+
+  <!-- Cinta animada ... -->
+  <div class="ticker-full-wrap">
     <!-- Cinta animada enfocada exclusivamente en los 3 pilares -->
     <div class="ticker-full-wrap">
       <div class="ticker-track">
@@ -628,7 +656,6 @@
     </div>
 
     <div class="container">
-      <span class="author-eyebrow">Cinthia Libertad Talledo Saavedra</span>
       <h1>Soluciones Digitales y Analítica</h1>
       <p class="subtitle">
         Especialista en optimización de procesos, inteligencia de negocios e implementación de soluciones digitales orientadas a maximizar la eficiencia operativa y la toma de decisiones basada en datos.
