@@ -38,7 +38,7 @@
       line-height: 1.6;
     }
 
-    /* Header / Hero Section - Fondo oscuro y elegante */
+    /* Header / Hero Section */
     header {
       background: linear-gradient(135deg, #0f0c1b 0%, #1c0928 100%);
       color: #ffffff;
@@ -60,7 +60,7 @@
       border-top: 1px solid rgba(253, 164, 175, 0.35);
       border-bottom: 1px solid rgba(253, 164, 175, 0.35);
       padding: 0.65rem 0;
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
       overflow: hidden;
       display: flex;
     }
@@ -68,7 +68,7 @@
     .ticker-track {
       display: flex;
       width: max-content;
-      animation: ticker-scroll 28s linear infinite;
+      animation: ticker-scroll 24s linear infinite;
     }
 
     .ticker-full-wrap:hover .ticker-track {
@@ -80,7 +80,7 @@
       font-size: 0.9rem;
       font-weight: 600;
       font-style: italic;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       color: #fda4af;
       padding-right: 2rem;
     }
@@ -92,6 +92,17 @@
       100% {
         transform: translateX(-50%);
       }
+    }
+
+    /* Nombre fijo sobre el título principal */
+    .author-eyebrow {
+      display: inline-block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fda4af;
+      margin-bottom: 0.65rem;
     }
 
     header h1 {
@@ -195,7 +206,7 @@
       font-size: 1rem;
     }
 
-    /* Case Study Cards */
+    /* Case Study & Article Cards */
     .cases-grid {
       display: flex;
       flex-direction: column;
@@ -344,6 +355,56 @@
       border-radius: 0 8px 8px 0;
       color: var(--text-primary);
       font-weight: 500;
+    }
+
+    /* Tablas compactas dentro de artículos */
+    .article-table-wrap {
+      overflow-x: auto;
+      margin: 0.5rem 0;
+    }
+
+    .article-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    .article-table th {
+      background-color: #f8fafc;
+      color: var(--text-primary);
+      font-weight: 700;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .article-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    /* Contenedor de gráficos SVG dentro de artículos */
+    .chart-box {
+      background-color: #fafaf9;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 0.5rem 0;
+    }
+
+    .chart-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .charts-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
     }
 
     .evidence-link {
@@ -556,16 +617,18 @@
 
   <!-- HERO SECTION -->
   <header>
-    <!-- Cinta animada con nombre y arbolitos -->
+    <!-- Cinta animada enfocada exclusivamente en los 3 pilares -->
     <div class="ticker-full-wrap">
       <div class="ticker-track">
-        <span class="ticker-item">Cinthia Libertad Talledo Saavedra 🎄 Transformación Digital 🎄 Producto Digital 🎄 Business Analytics 🎄</span>
-        <span class="ticker-item">Cinthia Libertad Talledo Saavedra 🎄 Transformación Digital 🎄 Producto Digital 🎄 Business Analytics 🎄</span>
-        <span class="ticker-item">Cinthia Libertad Talledo Saavedra 🎄 Transformación Digital 🎄 Producto Digital 🎄 Business Analytics 🎄</span>
+        <span class="ticker-item">Transformación Digital 🎄 Producto Digital 🎄 Business Analytics 🎄</span>
+        <span class="ticker-item">Transformación Digital 🎄 Producto Digital 🎄 Business Analytics 🎄</span>
+        <span class="ticker-item">Transformación Digital 🎄 Producto Digital 🎄 Business Analytics 🎄</span>
+        <span class="ticker-item">Transformación Digital 🎄 Producto Digital 🎄 Business Analytics 🎄</span>
       </div>
     </div>
 
     <div class="container">
+      <span class="author-eyebrow">Cinthia Libertad Talledo Saavedra</span>
       <h1>Soluciones Digitales y Analítica</h1>
       <p class="subtitle">
         Especialista en optimización de procesos, inteligencia de negocios e implementación de soluciones digitales orientadas a maximizar la eficiencia operativa y la toma de decisiones basada en datos.
@@ -732,7 +795,7 @@
     <section id="articulos">
       <div class="section-header">
         <h2>Artículos y Perspectivas</h2>
-        <p>Reflexiones prácticas sobre estrategia, evolución de productos digitales y toma de decisiones basada en evidencia.</p>
+        <p>Reflexiones prácticas sobre estrategia, experimentación de producto, gobierno de métricas y evolución digital.</p>
       </div>
 
       <div class="cases-grid">
@@ -790,12 +853,275 @@
                   <li><strong>En la optimización continua:</strong> Convierte los datos transaccionales en indicadores accionables (KPIs) para ajustar reglas de negocio, automatizar decisiones y maximizar la rentabilidad.</li>
                 </ul>
               </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- ARTÍCULO 2: PRODUCTO DIGITAL CON GRÁFICOS -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Producto Digital & Growth</span>
+            <span class="read-time-pill">📊 Incluye gráficos · 4 min</span>
+          </div>
+          <h3>Métricas que importan en Producto Digital: Del embudo de conversión a la retención</h3>
+          <p class="case-summary">
+            Cómo diagnosticar la salud de un canal digital combinando el marco AARRR (Métricas Pirata) con curvas de retención de cohortes para evitar el síndrome de las métricas vanidosas.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Product Management</span>
+            <span class="tech-tag">Funnel AARRR</span>
+            <span class="tech-tag">Retención & Cohortes</span>
+            <span class="tech-tag">Canales Digitales</span>
+          </div>
+
+          <details>
+            <summary>Leer artículo y ver gráficos</summary>
+            <div class="article-body">
+              <p>
+                Uno de los errores más frecuentes al gestionar canales digitales —especialmente en banca, salud o retail— es celebrar el volumen de descargas o visitas sin observar qué ocurre después del primer contacto. Un producto digital saludable se mide por su capacidad de resolver una necesidad recurrente sin fricción.
+              </p>
+
+              <!-- GRÁFICOS SVG INTEGRADOS -->
+              <div class="charts-grid-2">
+                <!-- Gráfico 1: Embudo de Conversión Digital -->
+                <div class="chart-box">
+                  <div class="chart-title">Embudo de Conversión en Canal Digital (Modelo AARRR)</div>
+                  <svg viewBox="0 0 360 220" width="100%" height="auto" aria-label="Gráfico de embudo de conversión digital">
+                    <!-- Barra 1: Adquisición -->
+                    <rect x="20" y="15" width="320" height="30" rx="6" fill="#1e1b4b"/>
+                    <text x="32" y="34" fill="#ffffff" font-size="11" font-weight="600">1. Adquisición (Visitas al canal)</text>
+                    <text x="328" y="34" fill="#fda4af" font-size="11" font-weight="700" text-anchor="end">100%</text>
+
+                    <!-- Barra 2: Activación -->
+                    <rect x="45" y="55" width="270" height="30" rx="6" fill="#311042"/>
+                    <text x="57" y="74" fill="#ffffff" font-size="11" font-weight="600">2. Activación (Registro / 1er flujo)</text>
+                    <text x="303" y="74" fill="#fda4af" font-size="11" font-weight="700" text-anchor="end">64%</text>
+
+                    <!-- Barra 3: Retención -->
+                    <rect x="75" y="95" width="210" height="30" rx="6" fill="#be123c"/>
+                    <text x="87" y="114" fill="#ffffff" font-size="11" font-weight="600">3. Retención (Uso recurrente 30d)</text>
+                    <text x="273" y="114" fill="#ffffff" font-size="11" font-weight="700" text-anchor="end">41%</text>
+
+                    <!-- Barra 4: Ingresos / Valor -->
+                    <rect x="105" y="135" width="150" height="30" rx="6" fill="#e11d48"/>
+                    <text x="115" y="154" fill="#ffffff" font-size="11" font-weight="600">4. Conversión / Transacción</text>
+                    <text x="245" y="154" fill="#ffffff" font-size="11" font-weight="700" text-anchor="end">28%</text>
+
+                    <!-- Barra 5: Referencia -->
+                    <rect x="135" y="175" width="90" height="30" rx="6" fill="#fb7185"/>
+                    <text x="143" y="194" fill="#18181b" font-size="10.5" font-weight="700">5. NPS / Ref.</text>
+                    <text x="218" y="194" fill="#18181b" font-size="11" font-weight="700" text-anchor="end">15%</text>
+                  </svg>
+                </div>
+
+                <!-- Gráfico 2: Curva de Retención antes vs después de optimización UX -->
+                <div class="chart-box">
+                  <div class="chart-title">Impacto de Reducción de Fricción en Retención (Semanas)</div>
+                  <svg viewBox="0 0 360 220" width="100%" height="auto" aria-label="Curva de retención de usuarios">
+                    <!-- Ejes -->
+                    <line x1="40" y1="20" x2="40" y2="175" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <line x1="40" y1="175" x2="340" y2="175" stroke="#cbd5e1" stroke-width="1.5"/>
+
+                    <!-- Líneas guía horizontales -->
+                    <line x1="40" y1="50" x2="340" y2="50" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+                    <line x1="40" y1="112" x2="340" y2="112" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+
+                    <!-- Etiquetas Eje Y -->
+                    <text x="34" y="25" fill="#64748b" font-size="10" text-anchor="end">100%</text>
+                    <text x="34" y="54" fill="#64748b" font-size="10" text-anchor="end">75%</text>
+                    <text x="34" y="116" fill="#64748b" font-size="10" text-anchor="end">40%</text>
+                    <text x="34" y="175" fill="#64748b" font-size="10" text-anchor="end">0%</text>
+
+                    <!-- Etiquetas Eje X -->
+                    <text x="45" y="190" fill="#64748b" font-size="10">Sem 1</text>
+                    <text x="115" y="190" fill="#64748b" font-size="10">Sem 2</text>
+                    <text x="185" y="190" fill="#64748b" font-size="10">Sem 4</text>
+                    <text x="255" y="190" fill="#64748b" font-size="10">Sem 8</text>
+                    <text x="315" y="190" fill="#64748b" font-size="10">Sem 12</text>
+
+                    <!-- Curva Anterior (Gris) -->
+                    <polyline fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="4,3"
+                      points="45,25 120,105 190,138 260,152 330,158"/>
+
+                    <!-- Curva Optimizada (Coral) -->
+                    <polyline fill="none" stroke="#e11d48" stroke-width="3"
+                      points="45,25 120,68 190,92 260,104 330,108"/>
+
+                    <!-- Puntos clave -->
+                    <circle cx="330" cy="108" r="4" fill="#e11d48"/>
+                    <circle cx="330" cy="158" r="3.5" fill="#94a3b8"/>
+
+                    <!-- Leyenda -->
+                    <rect x="55" y="202" width="12" height="3" fill="#e11d48"/>
+                    <text x="72" y="207" fill="#18181b" font-size="10" font-weight="600">Flujo rediseñado (43% meseta)</text>
+                    <rect x="215" y="202" width="12" height="3" fill="#94a3b8"/>
+                    <text x="232" y="207" fill="#64748b" font-size="10">Flujo inicial (12%)</text>
+                  </svg>
+                </div>
+              </div>
 
               <div>
-                <h4>En síntesis</h4>
+                <h4>Claves para accionar estos indicadores:</h4>
+                <ul>
+                  <li><strong>Identificar el "Aha! Moment":</strong> Detectar qué acción temprana predice que un usuario volverá (por ejemplo, completar su primera consulta autogestionada en menos de 90 segundos).</li>
+                  <li><strong>Aplanar la curva de retención:</strong> Cuando la curva se estabiliza horizontalmente (meseta), significa que el producto alcanzó <em>Product-Market Fit</em> para ese segmento.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- ARTÍCULO 3: A/B TESTING -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Experimentación & Analítica</span>
+            <span class="read-time-pill">🧪 Lectura de 3 min</span>
+          </div>
+          <h3>A/B Testing en Productos Digitales: Cómo validar hipótesis sin adivinar</h3>
+          <p class="case-summary">
+            Guía práctica para estructurar experimentos controlados, definir tamaños de muestra, evitar el cierre prematuro de pruebas y tomar decisiones basadas en significancia estadística.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">A/B Testing</span>
+            <span class="tech-tag">Experimentación</span>
+            <span class="tech-tag">CRO & UX</span>
+            <span class="tech-tag">Estadística Aplicada</span>
+          </div>
+
+          <details>
+            <summary>Leer artículo completo</summary>
+            <div class="article-body">
+              <p>
+                En el desarrollo de productos digitales, las opiniones internas suelen competir sobre qué diseño, mensaje o flujo funcionará mejor. El <strong>A/B Testing</strong> resuelve este dilema dividiendo el tráfico de usuarios de manera aleatoria entre una versión de control (A) y una variante con un cambio específico (B) para medir cuál genera un mejor resultado.
+              </p>
+
+              <div class="article-highlight">
+                Un buen experimento no empieza cambiando el color de un botón; empieza con una hipótesis clara: "Si simplificamos [X], entonces [métrica Y] aumentará en [Z%] porque reducimos la carga cognitiva del usuario".
+              </div>
+
+              <div>
+                <h4>Las 4 reglas de oro para un A/B Test confiable:</h4>
+                <ul>
+                  <li><strong>Una sola variable crítica por prueba:</strong> Si cambias el título, la ubicación del formulario y el precio al mismo tiempo, no sabrás qué factor impulsó el cambio.</li>
+                  <li><strong>Definir una métrica primaria (OEC) y métricas de resguardo:</strong> Si pruebas un flujo más rápido de aprobación crediticia (métrica primaria: conversión), debes vigilar la tasa de morosidad o fraude (métrica de resguardo) para no ganar volumen sacrificando calidad.</li>
+                  <li><strong>Respetar el tamaño de muestra y el ciclo semanal:</strong> Detener un experimento al segundo día porque la variante B va ganando es uno de los sesgos más comunes (<em>peeking</em>). Siempre se deben cubrir ciclos completos de comportamiento (al menos 1 a 2 semanas) con un nivel de confianza estadística del 95%.</li>
+                  <li><strong>Documentar los aprendizajes fallidos:</strong> Un test donde la variante B no supera al control no es un fracaso; evitó invertir meses de desarrollo en una funcionalidad que no aportaba valor.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- ARTÍCULO 4: KPIs Y OKRs PARA TRANSFORMACIÓN DIGITAL -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Gobierno & Estrategia</span>
+            <span class="read-time-pill">🎯 Lectura de 4 min</span>
+          </div>
+          <h3>KPIs y OKRs en Transformación Digital: Cómo conectar la estrategia con la operación</h3>
+          <p class="case-summary">
+            Por qué confundir indicadores operativos con objetivos estratégicos frena la agilidad organizacional, y cómo estructurar un tablero balanceado que impulse resultados reales.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">OKRs</span>
+            <span class="tech-tag">KPIs</span>
+            <span class="tech-tag">Transformación Digital</span>
+            <span class="tech-tag">Gestión por Procesos</span>
+          </div>
+
+          <details>
+            <summary>Leer artículo completo</summary>
+            <div class="article-body">
+              <p>
+                Muchas iniciativas de transformación digital pierden impulso porque los equipos miden actividad (<em>"entregamos 15 pantallas nuevas"</em>) en lugar de impacto (<em>"redujimos en 40% las llamadas al call center"</em>). Para evitarlo, es fundamental distinguir entre <strong>OKRs</strong> (el motor de cambio) y <strong>KPIs</strong> (el tablero de salud operativa).
+              </p>
+
+              <div class="article-table-wrap">
+                <table class="article-table">
+                  <thead>
+                    <tr>
+                      <th>Dimensión</th>
+                      <th>OKRs (Objectives & Key Results)</th>
+                      <th>KPIs (Key Performance Indicators)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Propósito principal</strong></td>
+                      <td>Impulsar transformación, innovación y saltos de mejora.</td>
+                      <td>Monitorear la salud y estabilidad del negocio día a día.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Horizonte temporal</strong></td>
+                      <td>Trimestral o semestral (ciclos ágiles de revisión).</td>
+                      <td>Continuo (diario, semanal, mensual).</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Ejemplo en Canal Digital</strong></td>
+                      <td><strong>O:</strong> Convertir la app en el canal preferido de autogestión.<br><strong>KR1:</strong> Elevar la adopción digital del 35% al 60%.<br><strong>KR2:</strong> Reducir el tiempo promedio de trámite de 8 min a 2 min.</td>
+                      <td>Disponibilidad del sistema (Uptime 99.9%), SLA de atención de reclamos, tasa de error en transacciones.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div>
+                <h4>Cómo evitar la trampa de las métricas aisladas:</h4>
                 <p>
-                  Cuando estas tres áreas trabajan en silos, surgen productos tecnológicos que nadie adopta o tableros de datos que nadie acciona. Cuando convergen, cada mejora operativa se convierte en una ventaja competitiva medible y sostenible.
+                  Cuando un área de tecnología tiene OKRs desconectados de los KPIs del área operativa o comercial, se generan fricciones. La clave está en definir <strong>métricas compartidas de punta a punta (End-to-End)</strong> donde negocio, procesos y analítica respondan por el mismo resultado final.
                 </p>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- ARTÍCULO 5: RELACIONADO A PUESTOS POSTULADOS (OMNICHANNEL, PROCESOS, DATOS & PRODUCTO) -->
+        <article class="case-card">
+          <div class="case-top">
+            <span class="case-category">Omnicanalidad & Eficiencia Operativa</span>
+            <span class="read-time-pill">🚀 Lectura de 4 min</span>
+          </div>
+          <h3>Del descubrimiento operativo a la automatización: Construyendo canales digitales sin fricción</h3>
+          <p class="case-summary">
+            Un enfoque integral para evolucionar ecosistemas de atención y venta omnicanal combinando mapeo de procesos (BPMN), gobierno de datos en la nube y automatización inteligente.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">Canales Digitales</span>
+            <span class="tech-tag">BPMN & Procesos</span>
+            <span class="tech-tag">BigQuery & BI</span>
+            <span class="tech-tag">Automatización & IA</span>
+          </div>
+
+          <details>
+            <summary>Leer artículo completo</summary>
+            <div class="article-body">
+              <p>
+                Tanto en banca y servicios financieros como en salud y retail moderno, los clientes no distinguen entre canales físicos y digitales: esperan una experiencia continua, rápida y sin reprocesos. Lograr esa fluidez requiere articular tres capacidades operativas desde el rol de Producto y Analítica:
+              </p>
+
+              <div>
+                <h4>1. Arquitectura de Procesos antes de la Automatización (BPMN + Design Thinking)</h4>
+                <p>
+                  Automatizar un proceso roto solo produce errores más rápido. El primer paso siempre es levantar el flujo real (<em>As-Is</em>), identificar cuellos de botella en los puntos de contacto con el cliente y rediseñar el flujo ideal (<em>To-Be</em>) eliminando pasos redundantes y validaciones manuales innecesarias.
+                </p>
+              </div>
+
+              <div>
+                <h4>2. Gobierno de Datos y Analítica Escalable en la Nube</h4>
+                <p>
+                  Para que los equipos comerciales y de producto tomen decisiones oportunas, la información dispersa en múltiples sistemas debe integrarse en modelos de datos limpios y confiables (como arquitecturas sobre BigQuery/GCP conectadas a Power BI o Looker). Esto permite pasar de reportes manuales tardíos a tableros automatizados de seguimiento de SLAs, embudos de adquisición y capacidad operativa.
+                </p>
+              </div>
+
+              <div>
+                <h4>3. Automatización de Flujos y Agentes de IA Generativa</h4>
+                <p>
+                  La combinación de flujos automatizados (low-code/no-code) para la gestión operativa interna y agentes conversacionales impulsados por IA generativa para resolver consultas frecuentes libera horas valiosas de los equipos operativos, reduciendo tiempos de espera y elevando el cumplimiento de acuerdos de nivel de servicio (SLA) por encima del 95%.
+                </p>
+              </div>
+
+              <div class="article-highlight">
+                El rol moderno de Analista de Producto Digital y Procesos actúa como el puente bilingüe entre la estrategia del negocio y la ejecución técnica, asegurando que cada solución sea viable, medible y centrada en las personas.
               </div>
             </div>
           </details>
@@ -805,44 +1131,44 @@
     </section>
   </main>
 
-  <!-- WIDGET INTERACTIVO DE WHATSAPP CON OPCIONES -->
+  <!-- WIDGET INTERACTIVO DE WHATSAPP ENFOCADO EN RECLUTAMIENTO -->
   <div class="whatsapp-widget">
     <div class="whatsapp-menu" id="waMenu">
       <div class="wa-menu-header">
         <div>
           <strong>Cinthia Talledo</strong>
-          <span>¿Sobre qué te gustaría conversar?</span>
+          <span>¿Para qué área es la vacante?</span>
         </div>
         <button class="wa-close-btn" onclick="toggleWaMenu()" aria-label="Cerrar">&times;</button>
       </div>
       <div class="wa-menu-body">
-        <!-- Opción 1: Reclutarme -->
-        <a href="https://wa.me/51970531660?text=Hola%20Cinthia,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo%20sobre%20una%20oportunidad%20laboral." 
+        <!-- Opción 1: Transformación Digital -->
+        <a href="https://wa.me/51970531660?text=Hola%20Cinthia,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo%20sobre%20una%20vacante%20en%20Transformaci%C3%B3n%20Digital." 
            target="_blank" class="wa-option">
-          <span class="wa-option-icon">💼</span>
+          <span class="wa-option-icon">🔄</span>
           <div class="wa-option-text">
-            Reclutarme
-            <small>Roles de Producto Digital, BI o Transformación</small>
+            Transformación Digital
+            <small>Procesos, omnicanalidad y mejora continua</small>
           </div>
         </a>
 
-        <!-- Opción 2: Asesoría para Empresa -->
-        <a href="https://wa.me/51970531660?text=Hola%20Cinthia,%20me%20interesa%20una%20asesor%C3%ADa%20para%20mi%20empresa%20en%20procesos,%20automatizaci%C3%B3n%20o%20Power%20BI." 
+        <!-- Opción 2: Producto Digital -->
+        <a href="https://wa.me/51970531660?text=Hola%20Cinthia,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo%20sobre%20una%20vacante%20en%20Producto%20Digital." 
            target="_blank" class="wa-option">
-          <span class="wa-option-icon">🏢</span>
+          <span class="wa-option-icon">🚀</span>
           <div class="wa-option-text">
-            Asesoría para empresa
-            <small>Dashboards BI, procesos y automatización</small>
+            Producto Digital
+            <small>Canales digitales, discovery y gestión de producto</small>
           </div>
         </a>
 
-        <!-- Opción 3: Asesoría Personal -->
-        <a href="https://wa.me/51970531660?text=Hola%20Cinthia,%20me%20gustar%C3%ADa%20solicitar%20una%20asesor%C3%ADa%20personalizada%20/%20mentor%C3%ADa." 
+        <!-- Opción 3: Business Intelligence (BI) -->
+        <a href="https://wa.me/51970531660?text=Hola%20Cinthia,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo%20sobre%20una%20vacante%20en%20Business%20Intelligence%20(BI)." 
            target="_blank" class="wa-option">
-          <span class="wa-option-icon">🎯</span>
+          <span class="wa-option-icon">📊</span>
           <div class="wa-option-text">
-            Asesoría personal
-            <small>Sesión 1 a 1 en herramientas o proyectos</small>
+            Business Intelligence (BI)
+            <small>Modelado de datos, dashboards y analítica de negocio</small>
           </div>
         </a>
       </div>
