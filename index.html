@@ -34,42 +34,14 @@
     }
 
     /* Marca en el hero: nombre arriba a la izquierda, título debajo */
-    .hero-brand {
-      position: relative;
-      margin-bottom: 1.75rem;
-    }
-
+   <div class="hero-brand">
+        <div class="hero-id">
+          <span class="hero-name">Cinthia Libertad Talledo Saavedra</span>
+          ...
+        </div>
+        <h1 class="hero-title">Soluciones Digitales y Analítica</h1>
+      </div>
     /* Botón modo claro / oscuro */
-    .theme-toggle {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      background-color: transparent;
-      color: #ffffff;
-      font-size: 1.1rem;
-      line-height: 1;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-    }
-
-    .theme-toggle:hover {
-      background-color: #c026d3;
-      border-color: #c026d3;
-      transform: translateY(-1px);
-    }
-
-    .theme-toggle:focus-visible {
-      outline: 2px solid #c7d2fe;
-      outline-offset: 2px;
-    }
-
     .hero-name {
       display: block;
       font-size: 0.95rem;
@@ -142,9 +114,9 @@
     /* Cinta animada de ancho completo */
     .ticker-full-wrap {
       width: 100%;
-      background-color: rgba(192, 38, 211, 0.16);
-      border-top: 1px solid rgba(192, 38, 211, 0.45);
-      border-bottom: 1px solid rgba(192, 38, 211, 0.45);
+      background-color: #c7d2fe;
+      border-top: 1px solid #a5b4fc;
+      border-bottom: 1px solid #a5b4fc;
       padding: 0.65rem 0;
       margin-bottom: 3rem;
       overflow: hidden;
@@ -1229,27 +1201,7 @@
       </button>
     </div>
   </div>
-
-  <script>
-    (function () {
-      var root = document.documentElement;
-      var btn = document.getElementById('themeToggle');
-
-      function applyTheme(theme) {
-        root.setAttribute('data-theme', theme);
-        btn.textContent = theme === 'dark' ? '☀️' : '🌙';
-        btn.setAttribute('aria-label', theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-      }
-
-      applyTheme(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
-
-      btn.addEventListener('click', function () {
-        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        applyTheme(next);
-        try { localStorage.setItem('theme', next); } catch (e) {}
-      });
-    })();
-
+<script>
     function toggleWaMenu() {
       const menu = document.getElementById('waMenu');
       const popup = document.getElementById('waPopup');
