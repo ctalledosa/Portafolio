@@ -674,7 +674,7 @@
       </div>
 
       <div class="cases-grid">
-      <!-- CASO 0: TRANSFORMACIÓN & GESTIÓN DE PROYECTOS RETAIL (FALABELLA) -->
+     <!-- CASO 0: TRANSFORMACIÓN & GESTIÓN DE PROYECTOS RETAIL (FALABELLA) -->
         <article class="case-card">
           <div class="case-top">
             <span class="case-category">Transformación Operativa & Gestión de Proyectos</span>
@@ -688,12 +688,12 @@
             <span class="tech-tag">Gestión de Proyectos</span>
             <span class="tech-tag">BPMN (Bizagi Modeler)</span>
             <span class="tech-tag">Customer & User Journey</span>
-            <span class="tech-tag">Retail & Sala de Ventas</span>
-            <span class="tech-tag">Automatización & SLAs</span>
+            <span class="tech-tag">Diseño de Flujo App</span>
+            <span class="tech-tag">Gestión del Cambio & Piloto</span>
           </div>
 
           <details>
-            <summary>Ver detalle del caso de estudio (BPMN As-Is / To-Be, Journey e Impacto)</summary>
+            <summary>Ver detalle del caso de estudio (BPMN, Flujo en App, Piloto e Impacto)</summary>
             <div class="case-details-body">
               <div class="detail-block">
                 <h4>1. Problema de Negocio</h4>
@@ -769,7 +769,7 @@
                     <text x="307" y="203" fill="#18181b" font-size="9" font-weight="700" text-anchor="middle">Checklist guiado</text>
                     <text x="307" y="214" fill="#86198f" font-size="8" text-anchor="middle">+ captura evidencia</text>
 
-                   <!-- Conector subida a BI -->
+                    <!-- Conector subida a BI -->
                     <polyline points="366,205 384,205 384,154 402,154" fill="none" stroke="#1e1b4b" stroke-width="1.6"/>
 
                     <rect x="404" y="140" width="104" height="28" rx="5" fill="#ecfdf5" stroke="#059669"/>
@@ -783,73 +783,162 @@
               </div>
 
               <div class="detail-block">
-                <h4>3. Automatización del Flujo de Ejecución y Diseño del Journey</h4>
-                <p>El diseño del <strong>Journey de ejecución (equipo de tienda) y de experiencia en góndola (cliente final)</strong> se construyó directamente a partir de las tareas, eventos y compuertas definidas en el <strong>diagrama BPMN To-Be</strong>:</p>
+                <h4>3. Automatización del Flujo de Ejecución, Diseño en App y Journey</h4>
+                <p>El diseño del <strong>Journey de ejecución (equipo de tienda) y de experiencia en góndola (cliente final)</strong> se construyó directamente a partir de las tareas, eventos y compuertas definidas en el <strong>diagrama BPMN To-Be</strong>, traduciéndose en un flujo de trabajo guiado dentro de la aplicación móvil:</p>
                 <ul>
-                  <li><strong>De la tarea BPMN de asignación al punto de contacto móvil:</strong> Al modelar el evento de inicio automático en Bizagi, se eliminó la búsqueda manual de archivos; el colaborador recibe en su aplicativo móvil una tarea asignada con el planograma visual y los pasos exactos de armado.</li>
-                  <li><strong>De las compuertas de validación a la experiencia sin fricción en sala:</strong> Las reglas de validación fotográfica y control de SLA definidas en el flujo To-Be garantizan que las exhibiciones promocionales estén listas antes de la apertura comercial, asegurando que el cliente final encuentre disponibilidad, orden y precios coherentes en el punto de venta.</li>
-                  <li><strong>Gobierno y Trazabilidad en Tiempo Real:</strong> Integración de tableros de control de SLAs para monitorear el avance por tienda, zona y categoría, permitiendo gestionar desvíos de forma preventiva.</li>
+                  <li><strong>De la tarea BPMN de asignación al punto de contacto móvil:</strong> Al modelar el evento de inicio automático en Bizagi, el colaborador recibe en la app la tarea asignada con la vista del planograma, ubicación en sala y prioridad por campaña.</li>
+                  <li><strong>Diseño del flujo en la aplicación:</strong> Tres pantallas secuenciales pensadas para uso en pasillo —<em>1) Bandeja de tareas y plano visual</em>, <em>2) Checklist de frentes/precios con captura fotográfica</em> y <em>3) Confirmación de envío con estado de SLA</em>— minimizando toques y evitando depender de chats externos.</li>
+                  <li><strong>De las compuertas de validación a la experiencia en sala:</strong> Las reglas de validación en el flujo To-Be aseguran que las exhibiciones queden listas antes de la apertura comercial, impactando directamente la góndola que ve el cliente.</li>
                 </ul>
 
-                <!-- GRÁFICO 2: CUSTOMER & USER JOURNEY DERIVADO DEL BPMN -->
+                <!-- GRÁFICO 2: PANTALLAS DE DISPOSITIVO CON LA APP ABIERTA -->
+                <div class="chart-box" style="margin-top: 1.25rem;">
+                  <div class="chart-title">Diseño del Flujo en la Aplicación Móvil (Pantallas de Ejecución en Tienda)</div>
+                  <svg viewBox="0 0 760 315" width="100%" height="auto" style="max-width: 820px; display: block; margin: 0 auto;" aria-label="Pantallas de dispositivo móvil mostrando el flujo de la app de planogramas">
+                    <!-- Flechas conectoras entre dispositivos -->
+                    <line x1="224" y1="155" x2="262" y2="155" stroke="#3730a3" stroke-width="2.5"/>
+                    <polygon points="262,150 272,155 262,160" fill="#3730a3"/>
+
+                    <line x1="478" y1="155" x2="516" y2="155" stroke="#c026d3" stroke-width="2.5"/>
+                    <polygon points="516,150 526,155 516,160" fill="#c026d3"/>
+
+                    <!-- DISPOSITIVO 1: PLANOGRAMA ASIGNADO -->
+                    <rect x="44" y="14" width="180" height="286" rx="22" fill="#18181b" stroke="#3f3f46" stroke-width="2"/>
+                    <rect x="96" y="22" width="76" height="6" rx="3" fill="#3f3f46"/>
+                    <rect x="54" y="36" width="160" height="244" rx="12" fill="#ffffff"/>
+                    <!-- Header App 1 -->
+                    <rect x="54" y="36" width="160" height="32" rx="10" fill="#1e1b4b"/>
+                    <text x="134" y="55" fill="#d896e8" font-size="9.5" font-weight="700" text-anchor="middle">1. Planograma Asignado</text>
+                    <!-- Contenido App 1 -->
+                    <text x="64" y="82" fill="#18181b" font-size="8.5" font-weight="700">Pasillo 4 · Campaña Hogar</text>
+                    <text x="64" y="93" fill="#52525b" font-size="7.5">SLA objetivo: 1 día hábil</text>
+                    <!-- Mini plano de góndola -->
+                    <rect x="64" y="100" width="140" height="86" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+                    <rect x="72" y="108" width="58" height="22" rx="3" fill="#e0e7ff" stroke="#3730a3"/>
+                    <text x="101" y="122" fill="#1e1b4b" font-size="7" font-weight="700" text-anchor="middle">SKU A · 4 frentes</text>
+                    <rect x="136" y="108" width="60" height="22" rx="3" fill="#fce7f3" stroke="#db2777"/>
+                    <text x="166" y="122" fill="#9d174d" font-size="7" font-weight="700" text-anchor="middle">SKU B · Promo</text>
+                    <rect x="72" y="136" width="124" height="20" rx="3" fill="#ecfdf5" stroke="#10b981"/>
+                    <text x="134" y="149" fill="#065f46" font-size="7" font-weight="700" text-anchor="middle">Nivel 2 · Cabecera Destacada</text>
+                    <rect x="72" y="161" width="124" height="18" rx="3" fill="#f1f5f9" stroke="#94a3b8"/>
+                    <text x="134" y="173" fill="#334155" font-size="7" text-anchor="middle">Cenefa precio visible</text>
+                    <!-- Botón App 1 -->
+                    <rect x="68" y="244" width="132" height="24" rx="6" fill="#1e1b4b"/>
+                    <text x="134" y="259" fill="#ffffff" font-size="8.5" font-weight="700" text-anchor="middle">Iniciar armado →</text>
+
+                    <!-- DISPOSITIVO 2: CHECKLIST Y FOTO -->
+                    <rect x="276" y="14" width="180" height="286" rx="22" fill="#18181b" stroke="#3f3f46" stroke-width="2"/>
+                    <rect x="328" y="22" width="76" height="6" rx="3" fill="#3f3f46"/>
+                    <rect x="286" y="36" width="160" height="244" rx="12" fill="#ffffff"/>
+                    <!-- Header App 2 -->
+                    <rect x="286" y="36" width="160" height="32" rx="10" fill="#3730a3"/>
+                    <text x="366" y="55" fill="#ffffff" font-size="9.5" font-weight="700" text-anchor="middle">2. Validación en Sala</text>
+                    <!-- Checklist items -->
+                    <rect x="296" y="76" width="140" height="24" rx="5" fill="#ecfdf5" stroke="#a7f3d0"/>
+                    <text x="304" y="91" fill="#065f46" font-size="7.8" font-weight="700">✓ Frentes y altura correctos</text>
+
+                    <rect x="296" y="105" width="140" height="24" rx="5" fill="#ecfdf5" stroke="#a7f3d0"/>
+                    <text x="304" y="120" fill="#065f46" font-size="7.8" font-weight="700">✓ Etiquetas y precios vigentes</text>
+
+                    <!-- Área captura evidencia -->
+                    <rect x="296" y="136" width="140" height="96" rx="6" fill="#fafaf9" stroke="#d896e8" stroke-width="1.5" stroke-dasharray="4,2"/>
+                    <circle cx="366" cy="170" r="14" fill="#f3e8ff"/>
+                    <text x="366" y="174" fill="#86198f" font-size="11" font-weight="700" text-anchor="middle">📷</text>
+                    <text x="366" y="198" fill="#18181b" font-size="8" font-weight="700" text-anchor="middle">Foto de góndola capturada</text>
+                    <text x="366" y="210" fill="#52525b" font-size="7" text-anchor="middle">Validación automática de campo</text>
+
+                    <!-- Botón App 2 -->
+                    <rect x="300" y="244" width="132" height="24" rx="6" fill="#3730a3"/>
+                    <text x="366" y="259" fill="#ffffff" font-size="8.5" font-weight="700" text-anchor="middle">Enviar evidencia →</text>
+
+                    <!-- DISPOSITIVO 3: CIERRE Y SLA -->
+                    <rect x="530" y="14" width="180" height="286" rx="22" fill="#18181b" stroke="#3f3f46" stroke-width="2"/>
+                    <rect x="582" y="22" width="76" height="6" rx="3" fill="#3f3f46"/>
+                    <rect x="540" y="36" width="160" height="244" rx="12" fill="#ffffff"/>
+                    <!-- Header App 3 -->
+                    <rect x="540" y="36" width="160" height="32" rx="10" fill="#86198f"/>
+                    <text x="620" y="55" fill="#d896e8" font-size="9.5" font-weight="700" text-anchor="middle">3. Cierre y Trazabilidad</text>
+                    <!-- Estado aprobado -->
+                    <circle cx="620" cy="106" r="24" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+                    <text x="620" y="112" fill="#059669" font-size="16" font-weight="700" text-anchor="middle">✓</text>
+                    <text x="620" y="146" fill="#18181b" font-size="9.5" font-weight="700" text-anchor="middle">Planograma Completado</text>
+                    <text x="620" y="160" fill="#065f46" font-size="8" font-weight="600" text-anchor="middle">Ejecutado en 1 día hábil</text>
+
+                    <rect x="552" y="174" width="136" height="54" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+                    <text x="620" y="190" fill="#1e1b4b" font-size="7.8" font-weight="700" text-anchor="middle">Sincronizado con tablero BI</text>
+                    <text x="620" y="203" fill="#52525b" font-size="7.2" text-anchor="middle">Sin correos ni reportes manuales</text>
+                    <text x="620" y="215" fill="#52525b" font-size="7.2" text-anchor="middle">Góndola lista para el cliente</text>
+
+                    <!-- Botón App 3 -->
+                    <rect x="554" y="244" width="132" height="24" rx="6" fill="#059669"/>
+                    <text x="620" y="259" fill="#ffffff" font-size="8.5" font-weight="700" text-anchor="middle">Ver siguiente tarea</text>
+                  </svg>
+                </div>
+
+                <!-- GRÁFICO 3: JOURNEY DE EJECUCIÓN Y EXPERIENCIA EN GÓNDOLA -->
                 <div class="chart-box" style="margin-top: 1.25rem;">
                   <div class="chart-title">Journey de Ejecución y Experiencia en Góndola (Derivado del BPMN To-Be)</div>
-                  <svg viewBox="0 0 760 255" width="100%" height="auto" style="max-width: 820px; display: block; margin: 0 auto;" aria-label="Journey derivado del flujo BPMN To-Be">
-                    <!-- Línea conectora de las 4 etapas -->
-                    <line x1="95" y1="30" x2="665" y2="30" stroke="#cbd5e1" stroke-width="2.5"/>
+                  <svg viewBox="0 0 760 245" width="100%" height="auto" style="max-width: 820px; display: block; margin: 0 auto;" aria-label="Journey derivado del flujo BPMN To-Be">
+                    <line x1="95" y1="28" x2="665" y2="28" stroke="#cbd5e1" stroke-width="2.5"/>
 
-                    <!-- Etapa 1 -->
-                    <circle cx="95" cy="30" r="14" fill="#1e1b4b"/>
-                    <text x="95" y="35" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">1</text>
-                    <rect x="18" y="52" width="154" height="68" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
-                    <text x="95" y="70" fill="#1e1b4b" font-size="10.5" font-weight="700" text-anchor="middle">1. Recepción en App</text>
-                    <text x="95" y="85" fill="#52525b" font-size="9" text-anchor="middle">Alerta automática con el</text>
-                    <text x="95" y="97" fill="#52525b" font-size="9" text-anchor="middle">planograma visual asignado</text>
-                    <text x="95" y="109" fill="#52525b" font-size="9" text-anchor="middle">a cada formato de tienda</text>
+                    <circle cx="95" cy="28" r="13" fill="#1e1b4b"/>
+                    <text x="95" y="32" fill="#ffffff" font-size="10.5" font-weight="700" text-anchor="middle">1</text>
+                    <rect x="18" y="48" width="154" height="64" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+                    <text x="95" y="65" fill="#1e1b4b" font-size="10" font-weight="700" text-anchor="middle">1. Recepción en App</text>
+                    <text x="95" y="79" fill="#52525b" font-size="8.8" text-anchor="middle">Alerta con planograma</text>
+                    <text x="95" y="91" fill="#52525b" font-size="8.8" text-anchor="middle">visual asignado por</text>
+                    <text x="95" y="103" fill="#52525b" font-size="8.8" text-anchor="middle">formato de tienda</text>
 
-                    <!-- Etapa 2 -->
-                    <circle cx="285" cy="30" r="14" fill="#3730a3"/>
-                    <text x="285" y="35" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">2</text>
-                    <rect x="208" y="52" width="154" height="68" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
-                    <text x="285" y="70" fill="#3730a3" font-size="10.5" font-weight="700" text-anchor="middle">2. Implementación</text>
-                    <text x="285" y="85" fill="#52525b" font-size="9" text-anchor="middle">Armado guiado paso a paso</text>
-                    <text x="285" y="97" fill="#52525b" font-size="9" text-anchor="middle">en góndola y captura de</text>
-                    <text x="285" y="109" fill="#52525b" font-size="9" text-anchor="middle">evidencia fotográfica</text>
+                    <circle cx="285" cy="28" r="13" fill="#3730a3"/>
+                    <text x="285" y="32" fill="#ffffff" font-size="10.5" font-weight="700" text-anchor="middle">2</text>
+                    <rect x="208" y="48" width="154" height="64" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+                    <text x="285" y="65" fill="#3730a3" font-size="10" font-weight="700" text-anchor="middle">2. Implementación</text>
+                    <text x="285" y="79" fill="#52525b" font-size="8.8" text-anchor="middle">Armado guiado en sala</text>
+                    <text x="285" y="91" fill="#52525b" font-size="8.8" text-anchor="middle">y captura de evidencia</text>
+                    <text x="285" y="103" fill="#52525b" font-size="8.8" text-anchor="middle">fotográfica en línea</text>
 
-                    <!-- Etapa 3 -->
-                    <circle cx="475" cy="30" r="14" fill="#c026d3"/>
-                    <text x="475" y="35" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">3</text>
-                    <rect x="398" y="52" width="154" height="68" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
-                    <text x="475" y="70" fill="#86198f" font-size="10.5" font-weight="700" text-anchor="middle">3. Validación &amp; SLA</text>
-                    <text x="475" y="85" fill="#52525b" font-size="9" text-anchor="middle">Cierre en 1 día hábil y</text>
-                    <text x="475" y="97" fill="#52525b" font-size="9" text-anchor="middle">monitoreo ejecutivo en BI</text>
-                    <text x="475" y="109" fill="#52525b" font-size="9" text-anchor="middle">sin reprocesos manuales</text>
+                    <circle cx="475" cy="28" r="13" fill="#c026d3"/>
+                    <text x="475" y="32" fill="#ffffff" font-size="10.5" font-weight="700" text-anchor="middle">3</text>
+                    <rect x="398" y="48" width="154" height="64" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+                    <text x="475" y="65" fill="#86198f" font-size="10" font-weight="700" text-anchor="middle">3. Cierre y SLA</text>
+                    <text x="475" y="79" fill="#52525b" font-size="8.8" text-anchor="middle">Cierre en 1 día hábil</text>
+                    <text x="475" y="91" fill="#52525b" font-size="8.8" text-anchor="middle">con trazabilidad en BI</text>
+                    <text x="475" y="103" fill="#52525b" font-size="8.8" text-anchor="middle">sin reprocesos</text>
 
-                    <!-- Etapa 4 -->
-                    <circle cx="665" cy="30" r="14" fill="#e11d48"/>
-                    <text x="665" y="35" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">4</text>
-                    <rect x="588" y="52" width="154" height="68" rx="8" fill="#fff1f2" stroke="#fda4af" stroke-width="1.2"/>
-                    <text x="665" y="70" fill="#be123c" font-size="10.5" font-weight="700" text-anchor="middle">4. Cliente en Sala</text>
-                    <text x="665" y="85" fill="#881337" font-size="9" text-anchor="middle">Góndola lista desde el</text>
-                    <text x="665" y="97" fill="#881337" font-size="9" text-anchor="middle">día 1 con surtido, orden</text>
-                    <text x="665" y="109" fill="#881337" font-size="9" text-anchor="middle">y precios coherentes</text>
+                    <circle cx="665" cy="28" r="13" fill="#e11d48"/>
+                    <text x="665" y="32" fill="#ffffff" font-size="10.5" font-weight="700" text-anchor="middle">4</text>
+                    <rect x="588" y="48" width="154" height="64" rx="8" fill="#fff1f2" stroke="#fda4af" stroke-width="1.2"/>
+                    <text x="665" y="65" fill="#be123c" font-size="10" font-weight="700" text-anchor="middle">4. Cliente en Sala</text>
+                    <text x="665" y="79" fill="#881337" font-size="8.8" text-anchor="middle">Góndola lista desde el</text>
+                    <text x="665" y="91" fill="#881337" font-size="8.8" text-anchor="middle">día 1 con surtido, orden</text>
+                    <text x="665" y="103" fill="#881337" font-size="8.8" text-anchor="middle">y precios coherentes</text>
 
-                    <!-- Bloque inferior: Conexión con Cliente Final -->
-                    <rect x="18" y="134" width="724" height="108" rx="10" fill="#1e1b4b"/>
-                    <text x="36" y="156" fill="#d896e8" font-size="10.5" font-weight="700">Impacto directo en el Journey del Cliente en Sala (Touchpoint Góndola):</text>
-                    <text x="36" y="175" fill="#ffffff" font-size="9.5">• Descubrimiento sin fricción: Exhibición ordenada y surtido completo desde el día 1 de campaña.</text>
-                    <text x="36" y="192" fill="#ffffff" font-size="9.5">• Coherencia omnicanal: Precios, promociones y ubicación alineados con la comunicación digital.</text>
-                    <text x="36" y="209" fill="#ffffff" font-size="9.5">• Decisión de compra ágil: Reducción de quiebres visuales, mejor experiencia (CSAT) y mayor conversión.</text>
-                    <text x="36" y="228" fill="#cbd5e1" font-size="8.8" font-style="italic">Trazabilidad: Cada etapa del journey nace de una tarea y compuerta del flujo BPMN To-Be.</text>
+                    <rect x="18" y="126" width="724" height="104" rx="10" fill="#1e1b4b"/>
+                    <text x="36" y="147" fill="#d896e8" font-size="10" font-weight="700">Conexión directa con el Journey del Cliente en Sala (Touchpoint Góndola):</text>
+                    <text x="36" y="165" fill="#ffffff" font-size="9.2">• Descubrimiento sin fricción: Exhibición ordenada y surtido completo desde el inicio de campaña.</text>
+                    <text x="36" y="182" fill="#ffffff" font-size="9.2">• Coherencia omnicanal: Precios, promociones y ubicación alineados con la comunicación digital.</text>
+                    <text x="36" y="199" fill="#ffffff" font-size="9.2">• Compra ágil y mayor CSAT: Menos quiebres visuales y mejor experiencia en punto de venta.</text>
+                    <text x="36" y="217" fill="#cbd5e1" font-size="8.5" font-style="italic">Trazabilidad: Cada etapa del journey nace de una tarea y compuerta del flujo BPMN To-Be.</text>
                   </svg>
                 </div>
               </div>
 
               <div class="detail-block">
-                <h4>4. Impacto Cuantificable</h4>
+                <h4>4. Capacitación, Piloto, Mejoras en Campo y Despliegue</h4>
                 <ul>
-                  <li><strong>Aceleración del despliegue comercial:</strong> Reducción del tiempo total de implementación de planogramas en tienda de <strong>6 días hábiles a 1 día hábil</strong> (-83% en el ciclo operativo), eliminando reprocesos de auditoría manual.</li>
-                  <li><strong>Experiencia en punto de venta (CSAT):</strong> Mejora en el indicador de satisfacción del cliente en sala (CSAT) asociada a la disponibilidad oportuna de surtido, orden en góndola y coherencia de precios desde el inicio de campaña.</li>
+                  <li><strong>Capacitación al personal:</strong> Sesiones prácticas y guías rápidas para jefaturas de tienda, visual merchandising y equipos de reposición, enfocadas en el uso del flujo en la app y los criterios de calidad de evidencia.</li>
+                  <li><strong>Piloto controlado (68% de adopción inicial):</strong> Validación en un grupo acotado de locales para probar tiempos de respuesta, conectividad en pasillos y claridad de las instrucciones antes de escalar.</li>
+                  <li><strong>Mejoras levantadas en campo:</strong> Se ajustó el orden del checklist según la secuencia física de armado en góndola, se añadieron ejemplos visuales de fotos válidas/observadas y se simplificó el registro de incidencias cuando faltaba algún SKU en reposición.</li>
+                  <li><strong>Adopción y escalamiento (95% inicial hasta el 100%):</strong> Tras incorporar los ajustes del piloto, el despliegue alcanzó un <strong>95% de adopción inicial</strong> en las tiendas habilitadas y se gestionó el seguimiento hasta consolidar el <strong>100% de adopción</strong> operativa.</li>
+                </ul>
+              </div>
+
+              <div class="detail-block">
+                <h4>5. Impacto Cuantificable (Escenario Ilustrativo Adaptado)</h4>
+                <ul>
+                  <li><strong>Aceleración del despliegue comercial:</strong> Reducción del tiempo de implementación de planogramas en tienda de <strong>6 días hábiles a 1 día hábil</strong> (-83% en el ciclo operativo), eliminando seguimientos manuales por correo o chat.</li>
+                  <li><strong>Adopción sostenida:</strong> Escalamiento desde un <strong>68% en piloto</strong> hasta un <strong>95% de adopción inicial</strong> y <strong>100% de adopción</strong> en el alcance definido.</li>
+                  <li><strong>Satisfacción en sala (CSAT):</strong> Mejora estimada de <strong>+8 puntos porcentuales en CSAT</strong> de experiencia en góndola (pasando de 76% a 84% en un escenario ilustrativo adaptado), impulsada por la disponibilidad oportuna de surtido, orden visual y coherencia de precios.</li>
                 </ul>
               </div>
             </div>
