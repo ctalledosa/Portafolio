@@ -41,10 +41,10 @@
 
     .hero-name {
       display: block;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
       letter-spacing: 0.02em;
-      color: #d896e8;
+      color: #c7d2fe;
       text-align: left;
     }
 
@@ -63,7 +63,7 @@
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      border: 3px solid #d896e8;
+      border: 3px solid #c7d2fe;
       flex-shrink: 0;
     }
 
@@ -78,7 +78,7 @@
       align-items: center;
       justify-content: center;
       background-color: #312e81;
-      color: #d896e8;
+      color: #c7d2fe;
       font-weight: 700;
       font-size: 1.5rem;
     }
@@ -178,14 +178,14 @@
     .btn:focus-visible {
       background-color: #d896e8;
       border-color: #d896e8;
-      color: #1e1b4b;
+      color: #ffffff;
       transform: translateY(-1px);
     }
 
     .btn:active {
       background-color: #c879dc;
       border-color: #c879dc;
-      color: #1e1b4b;
+      color: #ffffff;
       transform: translateY(0);
     }
 
@@ -257,16 +257,10 @@
       transition: box-shadow 0.25s ease, border-color 0.25s ease;
     }
 
-    /* Las tarjetas de KPIs conservan el lavanda (#c7d2fe) */
+    .case-card:hover,
     .kpi-card:hover {
       border-color: #c7d2fe;
       box-shadow: 0 0 0 3px #c7d2fe, var(--shadow-hover);
-    }
-
-    /* Las tarjetas de casos y artículos usan #d896e8 */
-    .case-card:hover {
-      border-color: #d896e8;
-      box-shadow: 0 0 0 3px #d896e8, var(--shadow-hover);
     }
 
     .case-top {
@@ -283,8 +277,8 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: #2e1065;
-      background-color: #d896e8;
+      color: #3730a3;
+      background-color: #e0e7ff;
       padding: 0.25rem 0.75rem;
       border-radius: 6px;
     }
@@ -716,6 +710,71 @@
                 <h4>3. Impacto Cuantificable</h4>
                 <p>Reducción del tiempo operativo de <strong>120 minutos a 6 minutos en promedio</strong>, asegurando trazabilidad y precisión en el cumplimiento de rutas comerciales.</p>
                 <a href="https://drive.google.com/file/d/1IrRN5DTtEOmnsuNIqSf6K_c4AsAXhDCV/view?usp=sharing" target="_blank" class="evidence-link">▶ Ver demostración en video del flujo funcionando</a>
+              </div>
+              <div class="detail-block">
+                <h4>4. Embudo y Flujo de Validación en Campo</h4>
+                <div class="chart-box">
+                  <div class="chart-title">Embudo de Validación de Visitas en Campo</div>
+                  <svg viewBox="0 0 360 220" width="100%" height="auto" aria-label="Gráfico de embudo de validación en campo">
+                    <rect x="20" y="15" width="320" height="30" rx="6" fill="#1e1b4b"/>
+                    <text x="32" y="34" fill="#ffffff" font-size="11" font-weight="600">1. Registros de check-in en ruta</text>
+                    <text x="328" y="34" fill="#d896e8" font-size="11" font-weight="700" text-anchor="end">100%</text>
+
+                    <rect x="45" y="55" width="270" height="30" rx="6" fill="#312e81"/>
+                    <text x="57" y="74" fill="#ffffff" font-size="11" font-weight="600">2. Llave única y formato estandarizado</text>
+                    <text x="303" y="74" fill="#c7d2fe" font-size="11" font-weight="700" text-anchor="end">94%</text>
+
+                    <rect x="75" y="95" width="210" height="30" rx="6" fill="#4f46e5"/>
+                    <text x="87" y="114" fill="#ffffff" font-size="11" font-weight="600">3. Cruce contra maestro de tiendas</text>
+                    <text x="273" y="114" fill="#ffffff" font-size="11" font-weight="700" text-anchor="end">86%</text>
+
+                    <rect x="105" y="135" width="150" height="30" rx="6" fill="#d896e8"/>
+                    <text x="115" y="154" fill="#18181b" font-size="10.5" font-weight="700">4. Coordenada validada (±4 dec.)</text>
+                    <text x="245" y="154" fill="#18181b" font-size="11" font-weight="700" text-anchor="end">79%</text>
+
+                    <rect x="135" y="175" width="90" height="30" rx="6" fill="#e11d48"/>
+                    <text x="143" y="194" fill="#ffffff" font-size="10.5" font-weight="700">5. Auditoría OK</text>
+                    <text x="218" y="194" fill="#ffffff" font-size="11" font-weight="700" text-anchor="end">75%</text>
+                  </svg>
+                </div>
+              </div>
+              <div class="detail-block">
+                <h4>5. Evolución del Tiempo de Validación y Precisión</h4>
+                <div class="chart-box">
+                  <div class="chart-title">Tiempo de Cierre Diario (Minutos) vs. Precisión de Validación</div>
+                  <svg viewBox="0 0 360 220" width="100%" height="auto" aria-label="Gráfico de evolución de tiempo y precisión en validación">
+                    <line x1="40" y1="20" x2="40" y2="175" stroke="#c7d2fe" stroke-width="1.5"/>
+                    <line x1="40" y1="175" x2="340" y2="175" stroke="#c7d2fe" stroke-width="1.5"/>
+
+                    <line x1="40" y1="50" x2="340" y2="50" stroke="#e0e7ff" stroke-dasharray="3,3"/>
+                    <line x1="40" y1="112" x2="340" y2="112" stroke="#e0e7ff" stroke-dasharray="3,3"/>
+
+                    <text x="34" y="25" fill="#4f46e5" font-size="10" text-anchor="end">120m</text>
+                    <text x="34" y="54" fill="#4f46e5" font-size="10" text-anchor="end">80m</text>
+                    <text x="34" y="116" fill="#4f46e5" font-size="10" text-anchor="end">40m</text>
+                    <text x="34" y="175" fill="#4f46e5" font-size="10" text-anchor="end">0m</text>
+
+                    <text x="45" y="190" fill="#312e81" font-size="10">Base</text>
+                    <text x="115" y="190" fill="#312e81" font-size="10">Sem 1</text>
+                    <text x="185" y="190" fill="#312e81" font-size="10">Sem 2</text>
+                    <text x="255" y="190" fill="#312e81" font-size="10">Sem 3</text>
+                    <text x="315" y="190" fill="#312e81" font-size="10">Actual</text>
+
+                    <polyline fill="none" stroke="#312e81" stroke-width="2.5" stroke-dasharray="4,3"
+                      points="45,22 120,78 190,128 260,158 330,166"/>
+
+                    <polyline fill="none" stroke="#e11d48" stroke-width="3"
+                      points="45,120 120,82 190,54 260,36 330,28"/>
+
+                    <circle cx="330" cy="166" r="4" fill="#312e81"/>
+                    <circle cx="330" cy="28" r="4" fill="#e11d48"/>
+
+                    <rect x="45" y="202" width="12" height="3" fill="#312e81"/>
+                    <text x="62" y="207" fill="#1e1b4b" font-size="10" font-weight="600">Tiempo (6 min)</text>
+                    <rect x="175" y="202" width="12" height="3" fill="#e11d48"/>
+                    <text x="192" y="207" fill="#1e1b4b" font-size="10" font-weight="600">Precisión validación</text>
+                  </svg>
+                </div>
               </div>
             </div>
           </details>
