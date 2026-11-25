@@ -193,9 +193,11 @@
     main { padding: 3rem 1.5rem 5rem; }
 
     .kpi-strip {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
+      --kpi-gap: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--kpi-gap);
       margin-top: -6rem;
       margin-bottom: 3.5rem;
       position: relative;
@@ -203,8 +205,12 @@
     }
 
     .kpi-card {
+      flex: 0 0 calc((100% - 4 * var(--kpi-gap)) / 5);
+      display: block;
+      text-decoration: none;
+      cursor: pointer;
       background-color: var(--surface-color);
-      padding: 1.5rem;
+      padding: 1rem 0.7rem;
       border-radius: 12px;
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
@@ -213,7 +219,7 @@
     }
 
     .kpi-number {
-      font-size: 1.85rem;
+      font-size: 1.45rem;
       font-weight: 700;
       color: #3730a3;
       display: block;
@@ -221,7 +227,9 @@
     }
 
     .kpi-label {
-      font-size: 0.88rem;
+      font-size: 0.76rem;
+      line-height: 1.4;
+      display: block;
       color: var(--text-secondary);
       font-weight: 500;
     }
@@ -530,7 +538,15 @@
       background-color: var(--surface-color);
     }
 
+    .kpi-card:hover { transform: translateY(-2px); }
+    .case-card { scroll-margin-top: 1.5rem; }
+
+    @media (max-width: 900px) {
+      .kpi-card { flex: 0 0 calc((100% - 2 * var(--kpi-gap)) / 3); }
+    }
+
     @media (max-width: 640px) {
+      .kpi-card { flex: 0 0 calc((100% - var(--kpi-gap)) / 2); }
       .kpi-strip { margin-top: -4rem; }
       .case-card { padding: 1.5rem; }
       .whatsapp-popup { display: none; }
@@ -575,18 +591,38 @@
 
   <main class="container">
     <section class="kpi-strip">
-      <div class="kpi-card">
+      <a class="kpi-card" href="#caso-geolocalizacion">
         <span class="kpi-number">-95%</span>
-        <span class="kpi-label">Reducción de tiempo en validación operativa</span>
-      </div>
-      <div class="kpi-card">
+        <span class="kpi-label">Reducción de tiempo en validación de geolocalización</span>
+      </a>
+      <a class="kpi-card" href="#caso-planogramas">
+        <span class="kpi-number">-83%</span>
+        <span class="kpi-label">Implementación de planogramas en tienda (de 6 a 1 día)</span>
+      </a>
+      <a class="kpi-card" href="#caso-servicios">
+        <span class="kpi-number">-44%</span>
+        <span class="kpi-label">Ciclo del servicio al cliente (de 9 a 5 días)</span>
+      </a>
+      <a class="kpi-card" href="#caso-servicios">
+        <span class="kpi-number">-60%</span>
+        <span class="kpi-label">Consultas repetitivas de estado del servicio</span>
+      </a>
+      <a class="kpi-card" href="#caso-planogramas">
+        <span class="kpi-number">100%</span>
+        <span class="kpi-label">Adopción de la app en tiendas (desde 68% en piloto)</span>
+      </a>
+      <a class="kpi-card" href="#caso-planogramas">
+        <span class="kpi-number">+8 pp</span>
+        <span class="kpi-label">CSAT en góndola (de 76% a 84%)</span>
+      </a>
+      <a class="kpi-card" href="#caso-bi">
         <span class="kpi-number">25+</span>
         <span class="kpi-label">Centros operativos integrados en modelos BI</span>
-      </div>
-      <div class="kpi-card">
+      </a>
+      <a class="kpi-card" href="#caso-compensacion">
         <span class="kpi-number">100%</span>
         <span class="kpi-label">Automatización en cálculo de pagos variables</span>
-      </div>
+      </a>
     </section>
 
     <section id="casos">
@@ -597,7 +633,7 @@
 
       <div class="cases-grid">
      <!-- CASO 0: TRANSFORMACIÓN & GESTIÓN DE PROYECTOS RETAIL (FALABELLA) -->
-        <article class="case-card">
+        <article class="case-card" id="caso-planogramas">
           <div class="case-top">
             <span class="case-category">Transformación Operativa & Gestión de Proyectos</span>
             <span class="impact-pill">De 6 días a 1 día hábil (-83% tiempo)</span>
@@ -1022,7 +1058,7 @@
           </details>
         </article>
         <!-- CASO 0B: TRANSFORMACIÓN & PRODUCTO DIGITAL EN EMPRESA DE SERVICIOS -->
-        <article class="case-card">
+        <article class="case-card" id="caso-servicios">
           <div class="case-top">
             <span class="case-category">Transformación & Producto Digital · Servicios</span>
             <span class="impact-pill">Ciclo de servicio de 9 a 5 días hábiles (-44% tiempo)</span>
@@ -1370,7 +1406,7 @@
         </article>
 
         <!-- CASO 1 -->
-        <article class="case-card">
+        <article class="case-card" id="caso-geolocalizacion">
           <div class="case-top">
             <span class="case-category">Automatización & Eficiencia Operativa</span>
             <span class="impact-pill">De 2 horas a 6 minutos (-95% tiempo)</span>
@@ -1410,7 +1446,7 @@
         </article>
 
         <!-- CASO 2 -->
-        <article class="case-card">
+        <article class="case-card" id="caso-bi">
           <div class="case-top">
             <span class="case-category">Business Intelligence & Toma de Decisiones</span>
             <span class="impact-pill">Visibilidad ejecutiva multisede</span>
@@ -1450,7 +1486,7 @@
         </article>
 
         <!-- CASO 3 -->
-        <article class="case-card">
+        <article class="case-card" id="caso-compensacion">
           <div class="case-top">
             <span class="case-category">Analítica de Negocio & Compensaciones</span>
             <span class="impact-pill">Cero errores de cálculo</span>
@@ -1826,6 +1862,21 @@
       </a>
     </div>
   </div>
+
+  <script>
+    // Al hacer clic en un logro: abre el caso correspondiente y se desplaza hasta él
+    document.querySelectorAll('.kpi-card[href^="#"]').forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        var id = card.getAttribute('href');
+        var target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        var d = target.querySelector('details');
+        if (d) d.open = true;
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
 
   <footer>
     <div class="container">
